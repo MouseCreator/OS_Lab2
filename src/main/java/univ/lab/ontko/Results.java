@@ -1,3 +1,5 @@
+package univ.lab.ontko;
+
 public class Results {
   public String schedulingType;
   public String schedulingName;

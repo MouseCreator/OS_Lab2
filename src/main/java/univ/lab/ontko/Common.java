@@ -1,3 +1,5 @@
+package univ.lab.ontko;
+
 public class Common {
 
   static public int s2i (String s) {
@@ -29,27 +31,15 @@ public class Common {
   }
 
   static public boolean R2 (double X, double U) {
-    if ((X * X) <= (5 - 4 * Math.exp(.25) * U)) {
-      return true;
-    } else {
-      return false;
-    }
+    return (X * X) <= (5 - 4 * Math.exp(.25) * U);
   }
 
   static public boolean R3 (double X, double U) {
-    if ((X * X) >= (4 * Math.exp(-1.35) / U + 1.4)) {
-      return false;
-    } else {
-      return true;
-    }
+    return !((X * X) >= (4 * Math.exp(-1.35) / U + 1.4));
   }
 
   static public boolean R4 (double X, double U) {
-    if ((X * X) < (-4 * Math.log(U))) {
-      return true;
-    } else {
-      return false;
-    }
+    return (X * X) < (-4 * Math.log(U));
   }
 
 }
