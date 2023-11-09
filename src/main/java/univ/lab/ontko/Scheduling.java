@@ -18,8 +18,7 @@ public class Scheduling {
   private static int runtime = 1000;
   private static final Vector<SProcess> processVector = new Vector<>();
   private static Results result = new Results("null","null",0);
-  private static final String resultsFile = "Summary-Results";
-
+  private static final String resultsFile = "src/main/resources/Summary-Results.txt";
   private static final String SAMPLE_FILE = "src/main/resources/test.conf";
 
   private static void Init(String file) {

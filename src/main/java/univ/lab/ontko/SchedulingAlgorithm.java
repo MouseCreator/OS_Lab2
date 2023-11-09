@@ -15,7 +15,7 @@ public class SchedulingAlgorithm {
     int previousProcess = 0;
     int size = processVector.size();
     int completed = 0;
-    String resultsFile = "Summary-Processes";
+    String resultsFile = "src/main/resources/Summary-Processes.txt";
 
     result.schedulingType = "Batch (Nonpreemptive)";
     result.schedulingName = "First-Come First-Served"; 
