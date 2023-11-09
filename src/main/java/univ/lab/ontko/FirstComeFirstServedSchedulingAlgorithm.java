@@ -3,16 +3,18 @@ package univ.lab.ontko;
 // the scheduling algorithm written by the user resides.
 // User modification should occur within the Run() function.
 
+import univ.lab.scheduling.SchedulingAlgorithm;
+
 import java.util.Vector;
 import java.io.*;
 
-public class SchedulingAlgorithm {
-
-  public static Results Run(int runtime, Vector<SProcess> processVector, Results result) {
+public class FirstComeFirstServedSchedulingAlgorithm implements SchedulingAlgorithm {
+  @Override
+  public Results run(int runtime, Vector<SProcess> processVector, Results result) {
     int i;
     int comptime = 0;
     int currentProcess = 0;
-    int previousProcess = 0;
+    int previousProcess;
     int size = processVector.size();
     int completed = 0;
     String resultsFile = "src/main/resources/Summary-Processes.txt";
@@ -64,7 +66,9 @@ public class SchedulingAlgorithm {
         comptime++;
       }
       out.close();
-    } catch (IOException e) { /* Handle exceptions */ }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
     result.compuTime = comptime;
     return result;
   }

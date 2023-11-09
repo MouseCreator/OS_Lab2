@@ -7,6 +7,8 @@ package univ.lab.ontko;// This file contains the main() function for the Schedul
 
 // Created by Alexander Reeder, 2001 January 06
 
+import univ.lab.scheduling.SchedulingAlgorithm;
+
 import java.io.*;
 import java.util.*;
 
@@ -121,7 +123,8 @@ public class Scheduling {
         i++;
       }
     }
-    result = SchedulingAlgorithm.Run(runtime, processVector, result);    
+    SchedulingAlgorithm algorithm = new FirstComeFirstServedSchedulingAlgorithm();
+    result = algorithm.run(runtime, processVector, result);
     try {
       //BufferedWriter out = new BufferedWriter(new FileWriter(resultsFile));
       PrintStream out = new PrintStream(new FileOutputStream(resultsFile));
