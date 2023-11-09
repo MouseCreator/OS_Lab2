@@ -20,6 +20,8 @@ public class Scheduling {
   private static Results result = new Results("null","null",0);
   private static final String resultsFile = "Summary-Results";
 
+  private static final String SAMPLE_FILE = "src/main/resources/test.conf";
+
   private static void Init(String file) {
     File f = new File(file);
     String line;
@@ -85,12 +87,18 @@ public class Scheduling {
 
   public static void main(String[] args) {
     int i;
-
-    if (args.length != 1) {
+    String filename;
+    if (args.length == 0) {
+      filename = SAMPLE_FILE;
+    }
+    else if (args.length == 1) {
+      filename = args[0];
+    } else {
       System.out.println("Usage: 'java Scheduling <INIT FILE>'");
       System.exit(-1);
+      return;
     }
-    File f = new File(args[0]);
+    File f = new File(filename);
     if (!(f.exists())) {
       System.out.println("Scheduling: error, file '" + f.getName() + "' does not exist.");
       System.exit(-1);
@@ -100,7 +108,7 @@ public class Scheduling {
       System.exit(-1);
     }
     System.out.println("Working...");
-    Init(args[0]);
+    Init(filename);
     if (processVector.size() < processnum) {
       i = 0;
       while (processVector.size() < processnum) {       
