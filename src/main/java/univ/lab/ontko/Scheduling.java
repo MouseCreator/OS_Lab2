@@ -23,7 +23,7 @@ public class Scheduling {
   private static final String resultsFile = "src/main/resources/Summary-Results.txt";
   private static final String SAMPLE_FILE = "src/main/resources/test.conf";
 
-  private static void Init(String file) {
+  private static void init(String file) {
     File f = new File(file);
     String line;
     String tmp;
@@ -40,12 +40,12 @@ public class Scheduling {
           st.nextToken();
           processnum = Common.s2i(st.nextToken());
         }
-        if (line.startsWith("meandev")) {
+        if (line.startsWith("run_time_average")) {
           StringTokenizer st = new StringTokenizer(line);
           st.nextToken();
           meanDev = Common.s2i(st.nextToken());
         }
-        if (line.startsWith("standdev")) {
+        if (line.startsWith("run_time_stddev")) {
           StringTokenizer st = new StringTokenizer(line);
           st.nextToken();
           standardDev = Common.s2i(st.nextToken());
@@ -109,7 +109,7 @@ public class Scheduling {
       System.exit(-1);
     }
     System.out.println("Working...");
-    Init(filename);
+    init(filename);
     if (processVector.size() < processnum) {
       i = 0;
       while (processVector.size() < processnum) {       
