@@ -16,7 +16,7 @@ public class Scheduling {
   private static int meanDev = 1000;
   private static int standardDev = 100;
   private static int runtime = 1000;
-  private static final Vector<sProcess> processVector = new Vector<>();
+  private static final Vector<SProcess> processVector = new Vector<>();
   private static Results result = new Results("null","null",0);
   private static final String resultsFile = "Summary-Results";
 
@@ -57,7 +57,7 @@ public class Scheduling {
           }
           X = X * standardDev;
           cputime = (int) X + meanDev;
-          processVector.addElement(new sProcess(cputime, ioblocking, 0, 0, 0));          
+          processVector.addElement(new SProcess(cputime, ioblocking, 0, 0, 0));
         }
         if (line.startsWith("runtime")) {
           StringTokenizer st = new StringTokenizer(line);
@@ -77,8 +77,8 @@ public class Scheduling {
     System.out.println("standdev " + standardDev);
     int size = processVector.size();
     for (i = 0; i < size; i++) {
-      sProcess process = processVector.elementAt(i);
-      System.out.println("process " + i + " " + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.numblocked);
+      SProcess process = processVector.elementAt(i);
+      System.out.println("process " + i + " " + process.cpuTime + " " + process.ioBlocking + " " + process.cpuDone + " " + process.numBlocked);
     }
     System.out.println("runtime " + runtime);
   }
@@ -110,7 +110,7 @@ public class Scheduling {
           }
           X = X * standardDev;
         int cputime = (int) X + meanDev;
-        processVector.addElement(new sProcess(cputime,i*100,0,0,0));          
+        processVector.addElement(new SProcess(cputime,i*100,0,0,0));
         i++;
       }
     }
@@ -125,16 +125,16 @@ public class Scheduling {
       out.println("Standard Deviation: " + standardDev);
       out.println("Process #\tCPU Time\tIO Blocking\tCPU Completed\tCPU Blocked");
       for (i = 0; i < processVector.size(); i++) {
-        sProcess process = processVector.elementAt(i);
+        SProcess process = processVector.elementAt(i);
         out.print(i);
         if (i < 100) { out.print("\t\t"); } else { out.print("\t"); }
-        out.print(process.cputime);
-        if (process.cputime < 100) { out.print(" (ms)\t\t"); } else { out.print(" (ms)\t"); }
-        out.print(process.ioblocking);
-        if (process.ioblocking < 100) { out.print(" (ms)\t\t"); } else { out.print(" (ms)\t"); }
-        out.print(process.cpudone);
-        if (process.cpudone < 100) { out.print(" (ms)\t\t"); } else { out.print(" (ms)\t"); }
-        out.println(process.numblocked + " times");
+        out.print(process.cpuTime);
+        if (process.cpuTime < 100) { out.print(" (ms)\t\t"); } else { out.print(" (ms)\t"); }
+        out.print(process.ioBlocking);
+        if (process.ioBlocking < 100) { out.print(" (ms)\t\t"); } else { out.print(" (ms)\t"); }
+        out.print(process.cpuDone);
+        if (process.cpuDone < 100) { out.print(" (ms)\t\t"); } else { out.print(" (ms)\t"); }
+        out.println(process.numBlocked + " times");
       }
       out.close();
     } catch (IOException e) { /* Handle exceptions */ }
