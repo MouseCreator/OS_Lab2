@@ -7,7 +7,7 @@ import univ.lab.lib.fill.Fillable;
 import java.util.List;
 @Fillable(name = "properties")
 public class Processes {
-    @FillList(attribute = "processes")
+    @FillList(attribute = "process")
     private List<ProcessInfo> processInfoList;
 
     @Fill(attribute = "properties")

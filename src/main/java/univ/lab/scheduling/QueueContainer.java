@@ -89,8 +89,8 @@ public class QueueContainer {
         int quantum = switch (priority) {
             case CONSOLE_PRIORITY_QUEUE -> quantumDuration;
             case IO_PRIORITY_QUEUE -> quantumDuration * 2;
-            case SHORT_PRIORITY_QUEUE -> quantumDuration * 3;
-            case LONG_PRIORITY_QUEUE -> quantumDuration * 4;
+            case SHORT_PRIORITY_QUEUE -> quantumDuration * 4;
+            case LONG_PRIORITY_QUEUE -> quantumDuration * 8;
             default -> throw new IllegalArgumentException("Unexpected priority: " + priority);
         };
         process.setMaxQuantum(quantum);

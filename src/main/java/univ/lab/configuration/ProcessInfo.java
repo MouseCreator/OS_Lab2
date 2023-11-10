@@ -3,22 +3,21 @@ package univ.lab.configuration;
 import univ.lab.lib.fill.Fill;
 import univ.lab.lib.fill.Fillable;
 
-@Fillable(name = "processes")
+@Fillable(name = "process")
 public class ProcessInfo {
     @Fill(attribute = "name")
     private String name;
     @Fill(attribute = "complete-time")
-    private int runtime;
+    private Integer runtime;
     @Fill(attribute = "arrive-time")
-    private int arrive;
+    private Integer arrive;
     @Fill(attribute = "block-time-average")
-    private int averageBlockTime;
+    private String blockTime;
     @Fill(attribute = "work-time-average")
-    private int averageWorkTime;
-    @Fill(attribute = "block-time-deviation")
-    private int deviationBlockTime;
-    @Fill(attribute = "work-time-deviation")
-    private int deviationRunTime;
+    private String workTime;
+
+    @Fill(attribute = "boost")
+    private Boolean boost;
 
     public String getName() {
         return name;
@@ -44,35 +43,27 @@ public class ProcessInfo {
         this.arrive = arrive;
     }
 
-    public int getAverageBlockTime() {
-        return averageBlockTime;
+    public String getBlockTime() {
+        return blockTime;
     }
 
-    public void setAverageBlockTime(int averageBlockTime) {
-        this.averageBlockTime = averageBlockTime;
+    public void setBlockTime(String blockTime) {
+        this.blockTime = blockTime;
     }
 
-    public int getAverageWorkTime() {
-        return averageWorkTime;
+    public String getWorkTime() {
+        return workTime;
     }
 
-    public void setAverageWorkTime(int averageWorkTime) {
-        this.averageWorkTime = averageWorkTime;
+    public void setWorkTime(String workTime) {
+        this.workTime = workTime;
     }
 
-    public int getDeviationBlockTime() {
-        return deviationBlockTime;
+    public Boolean getBoost() {
+        return boost;
     }
 
-    public void setDeviationBlockTime(int deviationBlockTime) {
-        this.deviationBlockTime = deviationBlockTime;
-    }
-
-    public int getDeviationRunTime() {
-        return deviationRunTime;
-    }
-
-    public void setDeviationRunTime(int deviationRunTime) {
-        this.deviationRunTime = deviationRunTime;
+    public void setBoost(Boolean boost) {
+        this.boost = boost;
     }
 }
