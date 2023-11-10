@@ -2,6 +2,7 @@ package univ.lab.scheduling;
 
 import univ.lab.ontko.Results;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -26,50 +27,66 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     }
 
     private Results simulate(int runtime, List<ScheduledProcess> scheduledProcesses, Results result) {
-        int computationTime = 0;
-        int boostFrequency = 500;
-        int boostIterCounter = 0;
-        String resultsFile = "src/main/resources/Summary-Processes.txt";
         result.schedulingType = "Batch (Nonpreemptive)";
         result.schedulingName = "4 Queues";
-        ProcessRunner runner = new ProcessRunner();
+        int computationTime = 0;
         try {
-            PrintStream outStream = new PrintStream(new FileOutputStream(resultsFile));
-            ScheduledProcess process = null;
-            for (computationTime = 0; computationTime < runtime; computationTime++, boostIterCounter++) {
-                int arrived = checkForArriveProcess(computationTime, scheduledProcesses, outStream);
-                boostIterCounter = tryBoost(boostFrequency, boostIterCounter);
-                if (process == null) {
-                    if (arrived > 0) {
-                        process = getNext();
-                    } else {
-                        outStream.println("Idle...");
-                        queueContainer.applyElapsedTime(1); //may be replaced with "find min value" and skip iterations
-                        continue;
-                    }
-                }
-                ScheduledProcess.State currentProcessState = runner.nextTick();
-                switch (currentProcessState) {
-                    case RUNNING -> {
-                        //continue
-                    }
-                    case BLOCKED -> {
-                        addElapsedTime(computationTime, runner);
-                        queueContainer.enqueueAndModify(process);
-                        process = getNext();
-                    }
-                    case TERMINATED -> {
-                        addElapsedTime(computationTime, runner);
-                        process = getNext();
-                    }
-                }
-            }
-            outStream.close();
+            computationTime = calculate(runtime, scheduledProcesses);
         } catch (IOException e) {
             e.printStackTrace();
         }
         result.compuTime = computationTime;
         return result;
+    }
+
+    private int calculate(int runtime, List<ScheduledProcess> scheduledProcesses) throws FileNotFoundException {
+        String resultsFile = "src/main/resources/Summary-Processes.txt";
+        PrintStream outStream = new PrintStream(new FileOutputStream(resultsFile));
+        int computationTime = 0;
+        int boostFrequency = 500;
+        int boostIterCounter = 0;
+        ScheduledProcess process = null;
+        ProcessRunner runner = new ProcessRunner();
+        for (computationTime = 0; computationTime < runtime; computationTime++, boostIterCounter++) {
+            int arrived = checkForArriveProcess(computationTime, scheduledProcesses, outStream);
+            boostIterCounter = tryBoost(boostFrequency, boostIterCounter);
+            if (process == null) {
+                if (arrived > 0) {
+                    process = startNextProcess(computationTime, runner);
+                } else {
+                    outStream.println("Idle...");
+                    queueContainer.applyElapsedTime(1); //may be replaced with "find min value" and skip iterations
+                    process = startNextProcess(computationTime, runner);
+                    continue;
+                }
+            }
+            ScheduledProcess.State currentProcessState = runner.nextTick();
+            switch (currentProcessState) {
+                case RUNNING, READY -> {
+                    //continue
+                }
+                case BLOCKED -> {
+                    addElapsedTime(computationTime, runner);
+                    queueContainer.enqueueAndModify(process);
+                    process = startNextProcess(computationTime, runner);
+                }
+                case TERMINATED -> {
+                    addElapsedTime(computationTime, runner);
+                    process = startNextProcess(computationTime, runner);
+                }
+            }
+        }
+        outStream.close();
+        return computationTime;
+    }
+
+    private ScheduledProcess startNextProcess(int computationTime, ProcessRunner runner) {
+        ScheduledProcess process;
+        process = getNext();
+        if (process != null) {
+            runner.startProcess(process, computationTime);
+        }
+        return process;
     }
 
     private int checkForArriveProcess(int computationTime, List<ScheduledProcess> scheduledProcesses,
@@ -101,8 +118,8 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
         return process;
     }
 
-    private void addElapsedTime(int comptime, ProcessRunner runner) {
-        int timeElapsed = comptime - runner.timeStart();
+    private void addElapsedTime(int computationTime, ProcessRunner runner) {
+        int timeElapsed = computationTime - runner.timeStart();
         queueContainer.applyElapsedTime(timeElapsed);
     }
 

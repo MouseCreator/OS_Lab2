@@ -1,9 +1,9 @@
 package univ.lab.scheduling;
 
-public class ScheduledProcessFactory {
+public class ScheduledProcessBuilder {
     private final ScheduledProcess process;
 
-    public ScheduledProcessFactory() {
+    public ScheduledProcessBuilder() {
         this.process = new ScheduledProcess();
     }
 
@@ -11,30 +11,30 @@ public class ScheduledProcessFactory {
         return process;
     }
 
-    public ScheduledProcessFactory withTimeToComplete(int fullTime) {
+    public ScheduledProcessBuilder withTimeToComplete(int fullTime) {
         process.setTimeToComplete(fullTime);
         return this;
     }
-    public ScheduledProcessFactory withWorkingTime(int average, int deviation) {
+    public ScheduledProcessBuilder withWorkingTime(int average, int deviation) {
         process.setTimeToWorkGenerator(new BlockTimeGenerator(average, deviation));
         return this;
     }
-    public ScheduledProcessFactory withBlockingTime(int average, int deviation) {
+    public ScheduledProcessBuilder withBlockingTime(int average, int deviation) {
         process.setTimeToBlockGenerator(new BlockTimeGenerator(average, deviation));
         return this;
     }
 
-    public ScheduledProcessFactory boost(boolean toBoost) {
+    public ScheduledProcessBuilder boost(boolean toBoost) {
         process.setToBoost(toBoost);
         return this;
     }
 
-    public ScheduledProcessFactory timeArrive(int timeArrive) {
+    public ScheduledProcessBuilder timeArrive(int timeArrive) {
         process.setTimeArrive(timeArrive);
         return this;
     }
 
-    public ScheduledProcessFactory withName(String name) {
+    public ScheduledProcessBuilder withName(String name) {
         process.setName(name);
         return this;
     }
