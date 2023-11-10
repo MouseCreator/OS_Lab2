@@ -1,5 +1,6 @@
 package univ.lab.scheduling;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -36,9 +37,12 @@ public class QueueContainer {
         addProcess(process);
     }
 
-    public void enqueueAndModify(ScheduledProcess process) {
+    public void enqueueAndModify(ScheduledProcess process, PrintStream output) {
         if (isProcessUsedFullQuantum(process)) {
+            output.println(process.getName() + " was stopped");
             lowerPriorityForProcess(process);
+        } else {
+            output.println(process.getName() + " was blocked");
         }
         addProcess(process);
     }
@@ -69,10 +73,6 @@ public class QueueContainer {
         queues.get(process.getCurrentPriority()).add(process);
     }
 
-    private void addProcess(ScheduledProcess process, int priority) {
-        queues.get(priority).add(process);
-        process.setCurrentPriority(priority);
-    }
 
     private void lowerPriorityForProcess(ScheduledProcess process) {
         int priority = process.getCurrentPriority();

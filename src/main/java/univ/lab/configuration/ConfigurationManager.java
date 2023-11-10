@@ -48,13 +48,12 @@ public class ConfigurationManager {
         int[] block = parseMeanDeviationFormat(info.getBlockTime());
         int[] work = parseMeanDeviationFormat(info.getWorkTime());
         ScheduledProcessBuilder builder = new ScheduledProcessBuilder();
-        builder.withTimeToComplete(info.getRuntime())
+        return builder.withTimeToComplete(info.getRuntime())
                 .withTimeArrive(info.getArrive())
                 .withBlockingTime(block[0], block[1])
                 .withWorkingTime(work[0], work[1])
                 .withName(info.getName())
-                .boost(info.getBoost());
-        return builder.get();
+                .boost(info.getBoost()).get();
     }
 
     /**

@@ -20,9 +20,6 @@ public class ScheduledProcess {
     public State getState() {
         return state;
     }
-    public void setState(State state) {
-        this.state = state;
-    }
 
     public ScheduledProcess() {
         resetPhase();

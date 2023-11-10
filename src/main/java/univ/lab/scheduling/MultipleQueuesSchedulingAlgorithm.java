@@ -65,14 +65,13 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
                 }
                 case BLOCKED -> {
                     addElapsedTime(computationTime, runner);
-                    queueContainer.enqueueAndModify(process);
-                    outStream.println(process.getName() + " was blocked");
+                    queueContainer.enqueueAndModify(process, outStream);
                     process = startNextProcess(computationTime, runner);
                     logProcessStart(outStream, process);
                 }
                 case TERMINATED -> {
                     addElapsedTime(computationTime, runner);
-                    outStream.println(process.getName() + " quantum timeout");
+                    outStream.println(process.getName() + " terminated");
                     process = startNextProcess(computationTime, runner);
                     logProcessStart(outStream, process);
                 }
