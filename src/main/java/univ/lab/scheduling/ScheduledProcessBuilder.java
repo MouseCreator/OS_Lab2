@@ -29,7 +29,7 @@ public class ScheduledProcessBuilder {
         return this;
     }
 
-    public ScheduledProcessBuilder timeArrive(int timeArrive) {
+    public ScheduledProcessBuilder withTimeArrive(int timeArrive) {
         process.setTimeArrive(timeArrive);
         return this;
     }

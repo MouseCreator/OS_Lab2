@@ -9,4 +9,20 @@ public class SimulationProperties {
     private int runtime;
     @Fill(attribute = "quantum")
     private int quantumDuration;
+
+    public int getRuntime() {
+        return runtime;
+    }
+
+    public void setRuntime(int runtime) {
+        this.runtime = runtime;
+    }
+
+    public int getQuantumDuration() {
+        return quantumDuration;
+    }
+
+    public void setQuantumDuration(int quantumDuration) {
+        this.quantumDuration = quantumDuration;
+    }
 }

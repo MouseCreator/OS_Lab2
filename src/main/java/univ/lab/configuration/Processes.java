@@ -12,4 +12,12 @@ public class Processes {
 
     @Fill(attribute = "properties")
     private SimulationProperties simulationProperties;
+
+    public List<ProcessInfo> getProcessInfoList() {
+        return processInfoList;
+    }
+
+    public SimulationProperties getSimulationProperties() {
+        return simulationProperties;
+    }
 }
