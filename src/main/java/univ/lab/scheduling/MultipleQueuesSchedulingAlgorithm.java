@@ -54,6 +54,7 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
                     outStream.println("Idle...");
                     queueContainer.applyElapsedTime(1); //may be replaced with "find min value" and skip iterations
                     process = startNextProcess(computationTime, runner);
+                    logProcessStart(outStream, process);
                     continue;
                 }
             }
@@ -65,16 +66,24 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
                 case BLOCKED -> {
                     addElapsedTime(computationTime, runner);
                     queueContainer.enqueueAndModify(process);
+                    outStream.println(process.getName() + " was blocked");
                     process = startNextProcess(computationTime, runner);
+                    logProcessStart(outStream, process);
                 }
                 case TERMINATED -> {
                     addElapsedTime(computationTime, runner);
+                    outStream.println(process.getName() + " quantum timeout");
                     process = startNextProcess(computationTime, runner);
+                    logProcessStart(outStream, process);
                 }
             }
         }
         outStream.close();
         return computationTime;
+    }
+
+    private static void logProcessStart(PrintStream outStream, ScheduledProcess process) {
+        outStream.println(process.getName() + " started with quantum " + process.getMaxQuantum());
     }
 
     private ScheduledProcess startNextProcess(int computationTime, ProcessRunner runner) {
