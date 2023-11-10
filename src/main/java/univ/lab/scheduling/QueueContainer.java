@@ -9,10 +9,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 public class QueueContainer {
     private final int containerSize;
     private List<Queue<ScheduledProcess>> queues;
-    private final static int CONSOLE_PRIORITY_QUEUE = 0;
-    private final static int IO_PRIORITY_QUEUE = 1;
-    private final static int SHORT_PRIORITY_QUEUE = 2;
-    private final static int LONG_PRIORITY_QUEUE = 3;
+    public final static int CONSOLE_PRIORITY_QUEUE = 0;
+    public final static int IO_PRIORITY_QUEUE = 1;
+    public final static int SHORT_PRIORITY_QUEUE = 2;
+    public final static int LONG_PRIORITY_QUEUE = 3;
     private int quantumDuration;
     private int maxTimeBreaks = 1;
     public QueueContainer(int containerSize) {
@@ -100,5 +100,13 @@ public class QueueContainer {
     }
     public void setMaxTimeBreaks(int maxTimeBreaks) {
         this.maxTimeBreaks = maxTimeBreaks;
+    }
+
+    public int getQuantumDuration() {
+        return quantumDuration;
+    }
+
+    public void setQuantumDuration(int quantumDuration) {
+        this.quantumDuration = quantumDuration;
     }
 }
