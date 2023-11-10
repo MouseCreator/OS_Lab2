@@ -41,6 +41,13 @@ public class ScheduledProcess {
         else if (currentPhaseTimeElapsed >= nextBlockTime) {
             state = State.BLOCKED;
             timeBlocking = timeToBlockGenerator.generateTime();
+            setCurrentQuantum(currentPhaseTimeElapsed);
+            resetPhase();
+        }
+        else if (currentPhaseTimeElapsed >= maxQuantum) {
+            state = State.BLOCKED;
+            timeBlocking = 0;
+            setCurrentQuantum(currentPhaseTimeElapsed);
             resetPhase();
         }
     }
