@@ -2,7 +2,7 @@ package univ.lab.scheduling;
 
 import java.util.Random;
 
-public class BlockTimeGenerator {
+public class BlockTimeGenerator implements TimeGenerator {
     private final int deviation;
     private final int meanValue;
     private final Random random;
