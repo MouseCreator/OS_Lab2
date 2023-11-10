@@ -57,10 +57,28 @@ public class ConfigurationManager {
         return builder.get();
     }
 
+    /**
+     * Parses the string into 2-dim array into mean and max deviation
+     * If the string is in format A+B, the output range is [A, A+B]
+     * If the string is in format A-B, the output range is [A, B]
+     * If the string is in format A/B, the output range is [A-B, A+B]
+     * If string contains one integer value, the deviation is zero
+     * @param input - string in format A OPERATION B
+     * @return mean and deviation array
+     */
     private int[] parseMeanDeviationFormat(String input) {
         input = input.replace(" ", "");
         if (input.contains("+")) {
-            String[] tokens = input.split("\\+"); //as min-max value
+            String[] tokens = input.split("\\+"); //as min+delta value
+            int[] result = new int[tokens.length];
+            assert tokens.length == 2;
+            int a = Integer.parseInt(tokens[0]);
+            int b = Integer.parseInt(tokens[1]);
+            result[0] = a + b/2;
+            result[1] = b/2;
+            return result;
+        } else if (input.contains("-")) {
+            String[] tokens = input.split("-"); //as min-max value
             int[] result = new int[tokens.length];
             assert tokens.length == 2;
             int a = Integer.parseInt(tokens[0]);
