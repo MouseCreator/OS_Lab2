@@ -14,7 +14,7 @@ import java.util.*;
 
 public class Scheduling {
 
-  private static int processnum = 5;
+  private static int processNum = 5;
   private static int meanDev = 1000;
   private static int standardDev = 100;
   private static int runtime = 1000;
@@ -38,7 +38,7 @@ public class Scheduling {
         if (line.startsWith("numprocess")) {
           StringTokenizer st = new StringTokenizer(line);
           st.nextToken();
-          processnum = Common.s2i(st.nextToken());
+          processNum = Common.s2i(st.nextToken());
         }
         if (line.startsWith("run_time_average")) {
           StringTokenizer st = new StringTokenizer(line);
@@ -69,13 +69,15 @@ public class Scheduling {
         }
       }
       in.close();
-    } catch (IOException e) { /* Handle exceptions */ }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   private static void debug() {
     int i;
 
-    System.out.println("processnum " + processnum);
+    System.out.println("processnum " + processNum);
     System.out.println("meandevm " + meanDev);
     System.out.println("standdev " + standardDev);
     int size = processVector.size();
@@ -110,9 +112,9 @@ public class Scheduling {
     }
     System.out.println("Working...");
     init(filename);
-    if (processVector.size() < processnum) {
+    if (processVector.size() < processNum) {
       i = 0;
-      while (processVector.size() < processnum) {       
+      while (processVector.size() < processNum) {
           double X = Common.R1();
           while (X == -1.0) {
             X = Common.R1();
