@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Vector;
 
 public class ConfigurationManager {
-    private static final String xsdFile = "";
+    private static final String xsdFile = "src/main/resources/xml/queues.xsd";
     public Configuration parseInput(String xmlFilename) {
         validate(xmlFilename);
         StAXParser STAXParser = initParser();
