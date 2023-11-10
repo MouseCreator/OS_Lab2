@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.function.Consumer;
 
 public class QueueContainer {
     private final int containerSize;
@@ -108,5 +109,19 @@ public class QueueContainer {
 
     public void setQuantumDuration(int quantumDuration) {
         this.quantumDuration = quantumDuration;
+    }
+
+    public void applyElapsedTime(int timeElapsed) {
+        forEachProcess(p-> {
+            p.applyTime(timeElapsed);
+        });
+    }
+
+    private void forEachProcess(Consumer<ScheduledProcess> action) {
+        for (Queue<ScheduledProcess> queue : queues) {
+            for (ScheduledProcess process : queue) {
+                action.accept(process);
+            }
+        }
     }
 }
