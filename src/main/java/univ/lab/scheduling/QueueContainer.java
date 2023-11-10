@@ -122,9 +122,7 @@ public class QueueContainer {
     }
 
     public void applyElapsedTime(int timeElapsed) {
-        forEachProcess(p-> {
-            p.applyTime(timeElapsed);
-        });
+        forEachProcess(p-> p.applyTime(timeElapsed));
     }
 
     private void forEachProcess(Consumer<ScheduledProcess> action) {
@@ -133,5 +131,13 @@ public class QueueContainer {
                 action.accept(process);
             }
         }
+    }
+
+    public void applyBoost() {
+        forEachProcess(p -> {
+            if (p.isToBoost()) {
+                processBoost(p);
+            }
+        });
     }
 }

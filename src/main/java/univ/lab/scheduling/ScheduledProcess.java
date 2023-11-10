@@ -13,6 +13,10 @@ public class ScheduledProcess {
     private int timeBlocking;
     private BlockTimeGenerator timeToBlockGenerator;
     private BlockTimeGenerator timeToWorkGenerator;
+    private boolean toBoost;
+    private int timeArrive;
+    private String name;
+
     public State getState() {
         return state;
     }
@@ -76,6 +80,14 @@ public class ScheduledProcess {
         this.timeToWorkGenerator = timeToWorkGenerator;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     enum State {
         RUNNING, BLOCKED, READY, TERMINATED
     }
@@ -110,5 +122,21 @@ public class ScheduledProcess {
 
     public void setCurrentQuantum(int currentQuantum) {
         this.currentQuantum = currentQuantum;
+    }
+
+    public boolean isToBoost() {
+        return toBoost;
+    }
+
+    public void setToBoost(boolean toBoost) {
+        this.toBoost = toBoost;
+    }
+
+    public int getTimeArrive() {
+        return timeArrive;
+    }
+
+    public void setTimeArrive(int timeArrive) {
+        this.timeArrive = timeArrive;
     }
 }

@@ -23,4 +23,19 @@ public class ScheduledProcessFactory {
         process.setTimeToBlockGenerator(new BlockTimeGenerator(average, deviation));
         return this;
     }
+
+    public ScheduledProcessFactory boost(boolean toBoost) {
+        process.setToBoost(toBoost);
+        return this;
+    }
+
+    public ScheduledProcessFactory timeArrive(int timeArrive) {
+        process.setTimeArrive(timeArrive);
+        return this;
+    }
+
+    public ScheduledProcessFactory withName(String name) {
+        process.setName(name);
+        return this;
+    }
 }

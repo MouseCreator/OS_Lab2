@@ -8,7 +8,7 @@ import univ.lab.scheduling.SchedulingAlgorithm;
 import java.util.Vector;
 import java.io.*;
 
-public class FirstComeFirstServedSchedulingAlgorithm implements SchedulingAlgorithm {
+public class FirstComeFirstServedSchedulingAlgorithm implements SchedulingAlgorithm<SProcess> {
   @Override
   public Results run(int runtime, Vector<SProcess> processVector, Results result) {
     int i;

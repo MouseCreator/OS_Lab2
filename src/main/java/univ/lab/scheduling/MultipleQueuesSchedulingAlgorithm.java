@@ -1,41 +1,52 @@
 package univ.lab.scheduling;
 
 import univ.lab.ontko.Results;
-import univ.lab.ontko.SProcess;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Comparator;
 import java.util.Optional;
 import java.util.Vector;
+import java.util.List;
 
-public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm{
+public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<ScheduledProcess>{
     private final QueueContainer queueContainer;
     public MultipleQueuesSchedulingAlgorithm(QueueContainer queueContainer) {
         this.queueContainer = queueContainer;
     }
     @Override
-    public Results run(int runtime, Vector<SProcess> processVector, Results result) {
-        Vector<ScheduledProcess> scheduledProcesses = transformVector(processVector);
-        return simulate(runtime, scheduledProcesses, result);
+    public Results run(int runtime, Vector<ScheduledProcess> processVector, Results result) {
+        List<ScheduledProcess> processList = toSortedList(processVector);
+        return simulate(runtime, processList, result);
     }
 
-    private Results simulate(int runtime, Vector<ScheduledProcess> scheduledProcesses, Results result) {
-        int currentProcess = 0;
-        int comptime = 0;
+    private List<ScheduledProcess> toSortedList(Vector<ScheduledProcess> processVector) {
+        return processVector.stream().sorted(Comparator.comparingInt(ScheduledProcess::getTimeArrive)).toList();
+    }
+
+    private Results simulate(int runtime, List<ScheduledProcess> scheduledProcesses, Results result) {
+        int computationTime = 0;
+        int boostFrequency = 500;
+        int boostIterCounter = 0;
         String resultsFile = "src/main/resources/Summary-Processes.txt";
         result.schedulingType = "Batch (Nonpreemptive)";
         result.schedulingName = "4 Queues";
         ProcessRunner runner = new ProcessRunner();
         try {
             PrintStream outStream = new PrintStream(new FileOutputStream(resultsFile));
-            ScheduledProcess process = registerProcess(scheduledProcesses, currentProcess, outStream);
-            runner.startProcess(process, 0);
-            for (comptime = 0; comptime < runtime; comptime++) {
+            ScheduledProcess process = null;
+            for (computationTime = 0; computationTime < runtime; computationTime++, boostIterCounter++) {
+                int arrived = checkForArriveProcess(computationTime, scheduledProcesses, outStream);
+                boostIterCounter = tryBoost(boostFrequency, boostIterCounter);
                 if (process == null) {
-                    outStream.println("Idle...");
-                    queueContainer.applyElapsedTime(1); //may be replaced with "find min value"
-                    continue;
+                    if (arrived > 0) {
+                        process = getNext();
+                    } else {
+                        outStream.println("Idle...");
+                        queueContainer.applyElapsedTime(1); //may be replaced with "find min value" and skip iterations
+                        continue;
+                    }
                 }
                 ScheduledProcess.State currentProcessState = runner.nextTick();
                 switch (currentProcessState) {
@@ -43,12 +54,12 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm{
                         //continue
                     }
                     case BLOCKED -> {
-                        addElapsedTime(comptime, runner);
+                        addElapsedTime(computationTime, runner);
                         queueContainer.enqueueAndModify(process);
                         process = getNext();
                     }
                     case TERMINATED -> {
-                        addElapsedTime(comptime, runner);
+                        addElapsedTime(computationTime, runner);
                         process = getNext();
                     }
                 }
@@ -57,8 +68,30 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        result.compuTime = comptime;
+        result.compuTime = computationTime;
         return result;
+    }
+
+    private int checkForArriveProcess(int computationTime, List<ScheduledProcess> scheduledProcesses,
+                                       PrintStream out) {
+        int arrived = 0;
+        while (!scheduledProcesses.isEmpty() && scheduledProcesses.get(0).getTimeArrive()==computationTime) {
+            registerProcess(scheduledProcesses.remove(0), out);
+            arrived++;
+        }
+        return arrived;
+    }
+
+    private int tryBoost(int boostFrequency, int boostIterCounter) {
+        if (boostIterCounter >= boostFrequency) {
+            boostIterCounter = 0;
+            boost();
+        }
+        return boostIterCounter;
+    }
+
+    private void boost() {
+        queueContainer.applyBoost();
     }
 
     private ScheduledProcess getNext() {
@@ -73,14 +106,11 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm{
         queueContainer.applyElapsedTime(timeElapsed);
     }
 
-    private ScheduledProcess registerProcess(Vector<ScheduledProcess> processVector, int currentProcess, PrintStream out) {
-        ScheduledProcess process = processVector.elementAt(currentProcess);
-        /*out.println("Process: " + currentProcess + " registered... (" + process.cpuTime + " " + process.ioBlocking +
-                " " + process.cpuDone + " " + process.cpuDone + ")");
-        */
-        return process;
+    private void registerProcess(ScheduledProcess process, PrintStream out) {
+        queueContainer.enqueue(process);
+        out.println("Registered process: " + process.getName());
+        //out prints info
     }
-    private Vector<ScheduledProcess> transformVector(Vector<SProcess> processVector) {
-        throw new UnsupportedOperationException();
-    }
+
+
 }
