@@ -9,6 +9,8 @@ public class SimulationProperties {
     private int runtime;
     @Fill(attribute = "quantum")
     private int quantumDuration;
+    @Fill(attribute = "breaks")
+    private int breaks;
 
     public int getRuntime() {
         return runtime;
@@ -24,5 +26,13 @@ public class SimulationProperties {
 
     public void setQuantumDuration(int quantumDuration) {
         this.quantumDuration = quantumDuration;
+    }
+
+    public int getBreaks() {
+        return breaks;
+    }
+
+    public void setBreaks(int breaks) {
+        this.breaks = breaks;
     }
 }

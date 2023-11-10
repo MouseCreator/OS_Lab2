@@ -3,6 +3,7 @@
     <properties>
         <runtime>6000</runtime>
         <quantum>10</quantum>
+        <breaks>2</breaks>
     </properties>
 
     <processes>

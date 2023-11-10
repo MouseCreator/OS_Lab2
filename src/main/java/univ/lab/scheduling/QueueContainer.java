@@ -15,10 +15,14 @@ public class QueueContainer {
     public final static int SHORT_PRIORITY_QUEUE = 2;
     public final static int LONG_PRIORITY_QUEUE = 3;
     private int quantumDuration;
-    private int maxTimeBreaks = 1;
+    private int maxTimeBreaks;
     public QueueContainer(int containerSize) {
         this.containerSize = containerSize;
         initQueues();
+    }
+
+    public static QueueContainer commonContainer() {
+        return new QueueContainer(4);
     }
 
     private void initQueues() {
@@ -106,20 +110,6 @@ public class QueueContainer {
            queue.remove(process);
         }
     }
-    public int getMaxTimeBreaks() {
-        return maxTimeBreaks;
-    }
-    public void setMaxTimeBreaks(int maxTimeBreaks) {
-        this.maxTimeBreaks = maxTimeBreaks;
-    }
-
-    public int getQuantumDuration() {
-        return quantumDuration;
-    }
-
-    public void setQuantumDuration(int quantumDuration) {
-        this.quantumDuration = quantumDuration;
-    }
 
     public void applyElapsedTime(int timeElapsed) {
         forEachProcess(p-> p.applyTime(timeElapsed));
@@ -139,5 +129,13 @@ public class QueueContainer {
                 processBoost(p);
             }
         });
+    }
+
+    public void setQuantumDuration(int quantumDuration) {
+        this.quantumDuration = quantumDuration;
+    }
+
+    public void setMaxTimeBreaks(int maxTimeBreaks) {
+        this.maxTimeBreaks = maxTimeBreaks;
     }
 }

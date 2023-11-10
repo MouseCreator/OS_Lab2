@@ -8,6 +8,7 @@
                         <xs:sequence>
                             <xs:element name="runtime" type="xs:integer"/>
                             <xs:element name="quantum" type="xs:integer"/>
+                            <xs:element name="breaks" type="xs:integer"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
