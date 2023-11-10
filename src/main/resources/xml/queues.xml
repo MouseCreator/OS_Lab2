@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <properties>
-    <properties>
+    <configuration>
         <runtime>6000</runtime>
         <quantum>10</quantum>
         <breaks>2</breaks>
-    </properties>
+    </configuration>
 
     <processes>
         <process>
@@ -20,6 +20,7 @@
             <arrive-time>0</arrive-time>
             <work-time-average>15/5</work-time-average>
             <block-time-average>900/200</block-time-average>
+            <boost>1</boost>
         </process>
         <process>
             <name>Short calculation</name>

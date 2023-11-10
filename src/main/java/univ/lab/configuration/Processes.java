@@ -10,7 +10,7 @@ public class Processes {
     @FillList(attribute = "process")
     private List<ProcessInfo> processInfoList;
 
-    @Fill(attribute = "properties")
+    @Fill(attribute = "configuration")
     private SimulationProperties simulationProperties;
 
     public List<ProcessInfo> getProcessInfoList() {

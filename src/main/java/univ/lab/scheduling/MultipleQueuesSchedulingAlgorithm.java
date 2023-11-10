@@ -6,10 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.Comparator;
-import java.util.Optional;
-import java.util.Vector;
-import java.util.List;
+import java.util.*;
 
 public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<ScheduledProcess>{
     private final QueueContainer queueContainer;
@@ -23,7 +20,7 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     }
 
     private List<ScheduledProcess> toSortedList(Vector<ScheduledProcess> processVector) {
-        return processVector.stream().sorted(Comparator.comparingInt(ScheduledProcess::getTimeArrive)).toList();
+        return new ArrayList<>(processVector.stream().sorted(Comparator.comparingInt(ScheduledProcess::getTimeArrive)).toList());
     }
 
     private Results simulate(int runtime, List<ScheduledProcess> scheduledProcesses, Results result) {
@@ -42,7 +39,7 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     private int calculate(int runtime, List<ScheduledProcess> scheduledProcesses) throws FileNotFoundException {
         String resultsFile = "src/main/resources/Summary-Processes.txt";
         PrintStream outStream = new PrintStream(new FileOutputStream(resultsFile));
-        int computationTime = 0;
+        int computationTime;
         int boostFrequency = 500;
         int boostIterCounter = 0;
         ScheduledProcess process = null;

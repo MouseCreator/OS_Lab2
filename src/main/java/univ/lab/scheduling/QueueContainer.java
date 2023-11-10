@@ -3,13 +3,11 @@ package univ.lab.scheduling;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.function.Consumer;
 
 public class QueueContainer {
     private final int containerSize;
-    private List<Queue<ScheduledProcess>> queues;
+    private List<List<ScheduledProcess>> queues;
     public final static int CONSOLE_PRIORITY_QUEUE = 0;
     public final static int IO_PRIORITY_QUEUE = 1;
     public final static int SHORT_PRIORITY_QUEUE = 2;
@@ -28,7 +26,7 @@ public class QueueContainer {
     private void initQueues() {
         queues = new ArrayList<>(containerSize);
         for (int i = 0; i < containerSize; i++) {
-            queues.add(new ArrayBlockingQueue<>(containerSize));
+            queues.add(new ArrayList<>(containerSize));
         }
     }
 
@@ -45,7 +43,7 @@ public class QueueContainer {
         addProcess(process);
     }
     public Optional<ScheduledProcess> dequeue() {
-        for (Queue<ScheduledProcess> queue : queues) {
+        for (List<ScheduledProcess> queue : queues) {
             ScheduledProcess p;
             if ((p = getReadyProcess(queue)) != null)
                 return Optional.of(p);
@@ -53,7 +51,7 @@ public class QueueContainer {
         return Optional.empty();
     }
 
-    private ScheduledProcess getReadyProcess(Queue<ScheduledProcess> queue) {
+    private ScheduledProcess getReadyProcess(List<ScheduledProcess> queue) {
         for (ScheduledProcess process : queue) {
             if (process.getState()== ScheduledProcess.State.READY) {
                 return process;
@@ -106,7 +104,7 @@ public class QueueContainer {
 
 
     private void remove(ScheduledProcess process) {
-        for (Queue<ScheduledProcess> queue : queues) {
+        for (List<ScheduledProcess> queue : queues) {
            queue.remove(process);
         }
     }
@@ -116,7 +114,7 @@ public class QueueContainer {
     }
 
     private void forEachProcess(Consumer<ScheduledProcess> action) {
-        for (Queue<ScheduledProcess> queue : queues) {
+        for (List<ScheduledProcess> queue : queues) {
             for (ScheduledProcess process : queue) {
                 action.accept(process);
             }

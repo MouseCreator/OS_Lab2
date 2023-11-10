@@ -3,7 +3,7 @@ package univ.lab.configuration;
 import univ.lab.lib.fill.Fill;
 import univ.lab.lib.fill.Fillable;
 
-@Fillable(name = "properties")
+@Fillable(name = "configuration")
 public class SimulationProperties {
     @Fill(attribute = "runtime")
     private int runtime;

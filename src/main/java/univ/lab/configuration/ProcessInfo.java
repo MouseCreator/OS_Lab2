@@ -17,7 +17,7 @@ public class ProcessInfo {
     private String workTime;
 
     @Fill(attribute = "boost")
-    private Boolean boost;
+    private Boolean boost = false;
 
     public String getName() {
         return name;

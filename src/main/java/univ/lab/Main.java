@@ -21,7 +21,7 @@ public class Main {
 
     private static String getFile(String[] args) {
         if (args.length == 0) {
-            return "";
+            return "src/main/resources/xml/queues.xml";
         }
         if (args.length == 1) {
             return args[0];
