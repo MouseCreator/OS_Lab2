@@ -42,12 +42,22 @@ public class QueueContainer {
     }
     public Optional<ScheduledProcess> dequeue() {
         for (Queue<ScheduledProcess> queue : queues) {
-            if (queue.isEmpty())
-                continue;
-            return Optional.of(queue.poll());
+            ScheduledProcess p;
+            if ((p = getReadyProcess(queue)) != null)
+                return Optional.of(p);
         }
         return Optional.empty();
     }
+
+    private ScheduledProcess getReadyProcess(Queue<ScheduledProcess> queue) {
+        for (ScheduledProcess process : queue) {
+            if (process.getState()== ScheduledProcess.State.READY) {
+                return process;
+            }
+        }
+        return null;
+    }
+
     public void processBoost(ScheduledProcess process) {
         remove(process);
         enqueue(process);
