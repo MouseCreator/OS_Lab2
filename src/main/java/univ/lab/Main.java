@@ -7,6 +7,11 @@ import univ.lab.ontko.Results;
 import univ.lab.scheduling.*;
 
 public class Main {
+    /*
+    TODO:
+    1. Round-Robin algorithm for Queues
+    2. Extra task list
+     */
     public static void main(String[] args) {
         String file = getFile(args);
 
