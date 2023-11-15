@@ -82,7 +82,7 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     }
 
     private static void logProcessStart(PrintStream outStream, ScheduledProcess process) {
-        outStream.println(process.getName() + " started with quantum " + process.getQuantumDuration());
+        outStream.println(process.getName() + " started");
     }
 
     private ScheduledProcess startNextProcess(int computationTime, ProcessRunner runner) {

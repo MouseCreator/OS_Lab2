@@ -2,12 +2,12 @@ package univ.lab.scheduling;
 
 import java.util.Random;
 
-public class BlockTimeGenerator implements TimeGenerator {
+public class UniformTimeGenerator implements TimeGenerator {
     private final int deviation;
     private final int meanValue;
     private final Random random;
 
-    public BlockTimeGenerator(int deviation, int meanValue) {
+    public UniformTimeGenerator(int deviation, int meanValue) {
         this.deviation = deviation;
         this.meanValue = meanValue;
         random = new Random();

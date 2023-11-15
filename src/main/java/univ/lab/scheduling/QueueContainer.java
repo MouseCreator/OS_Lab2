@@ -32,7 +32,6 @@ public class QueueContainer {
     }
 
     public void enqueue(ScheduledProcess process) {
-        process.setTimesBreak(0);
         changePriority(process, CONSOLE_PRIORITY_QUEUE);
         addProcess(process);
     }
@@ -70,24 +69,16 @@ public class QueueContainer {
     }
 
     private void addProcess(ScheduledProcess process) {
-        queues.get(process.getCurrentPriority()).add(process);
+        queues.get(0).add(process);
     }
 
 
     private void lowerPriorityForProcess(ScheduledProcess process) {
-        int priority = process.getCurrentPriority();
-        int timesBreak = process.getTimesBreak();
-        if (timesBreak >= maxTimeBreaks) {
-            priority = Math.min(LONG_PRIORITY_QUEUE, ++priority);
-            process.setTimesBreak(0);
-            changePriority(process, priority);
-        } else {
-            process.setTimesBreak(timesBreak+1);
-        }
+
     }
 
     private void changePriority(ScheduledProcess process, int priority) {
-        process.setCurrentPriority(priority);
+       // process.setCurrentPriority(priority);
         int quantum = switch (priority) {
             case CONSOLE_PRIORITY_QUEUE -> quantumDuration;
             case IO_PRIORITY_QUEUE -> quantumDuration * 2;
@@ -95,11 +86,11 @@ public class QueueContainer {
             case LONG_PRIORITY_QUEUE -> quantumDuration * 8;
             default -> throw new IllegalArgumentException("Unexpected priority: " + priority);
         };
-        process.setQuantumDuration(quantum);
+       // process.setQuantumDuration(quantum);
     }
 
     private boolean isProcessUsedFullQuantum(ScheduledProcess process) {
-        return process.getQuantumDuration() <= process.getCurrentQuantum();
+        return false;
     }
 
 

@@ -31,28 +31,6 @@ public class RoundRobinScheduler {
             currentProcess = processList.remove(0);
         }
         currentProcess.nextTick();
-        ScheduledProcess.State processState = currentProcess.getState();
-        switch (processState) {
-            case TIMEOUT -> {
-                currentProcess.setState(ScheduledProcess.State.READY);
-                if (currentProcess.getTimeouts() < quantumNumber) {
-                    processList.add(currentProcess);
-                } else {
-                    currentProcess.resetTimeouts();
-                    timeoutProcesses.add(currentProcess);
-                }
-                currentProcess = null;
-            }
-            case BLOCKED -> {
-                processList.add(currentProcess);
-                currentProcess = null;
-            }
-            case TERMINATED -> currentProcess = null;
-            case READY, RUNNING -> {
-                return RRState.RUNNING;
-            }
-
-        }
         return RRState.FREE;
     }
 }

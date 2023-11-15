@@ -16,11 +16,11 @@ public class ScheduledProcessBuilder {
         return this;
     }
     public ScheduledProcessBuilder withWorkingTime(int average, int deviation) {
-        process.setTimeToWorkGenerator(new BlockTimeGenerator(average, deviation));
+        process.setWorkTimeGenerator(new UniformTimeGenerator(average, deviation));
         return this;
     }
     public ScheduledProcessBuilder withBlockingTime(int average, int deviation) {
-        process.setTimeToBlockGenerator(new BlockTimeGenerator(average, deviation));
+        process.setBlockTimeGenerator(new UniformTimeGenerator(average, deviation));
         return this;
     }
 
