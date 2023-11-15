@@ -37,25 +37,26 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     }
 
     private int calculate(int runtime, List<ScheduledProcess> scheduledProcesses) throws FileNotFoundException {
-        int quantumDuration = 10;
+        int quantumDuration = 20;
+        int boostFrequency = 500;
         String resultsFile = "src/main/resources/Summary-Processes.txt";
         PrintStream outStream = new PrintStream(new FileOutputStream(resultsFile));
         int computationTime;
-        int boostFrequency = 500;
         int lastBoost = 0;
         RunningProcess process = null;
         ProcessManager processManager = new ProcessManager();
         processManager.setQuantumDuration(quantumDuration);
         for (computationTime = 0; computationTime < runtime; computationTime++) {
             int arrived = checkForArriveProcess(computationTime, scheduledProcesses, outStream);
-            if (processManager.isEmpty()) {
+            if (process == null) {
                 if (arrived > 0) {
                     process = startNextProcess(processManager, outStream);
                 } else {
+                    if (scheduledProcesses.isEmpty())
+                        return computationTime;
                     outStream.println("Idle...");
                     queueContainer.applyElapsedTime(1);
                     process = startNextProcess(processManager, outStream);
-                    logProcessStart(outStream, process);
                     continue;
                 }
             }
@@ -70,22 +71,18 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
                         throw new NullPointerException("Trying to enqueue null process");
                     }
                     queueContainer.enqueue(process);
-                    lastBoost = tryBoost(computationTime, boostFrequency, lastBoost);
+                    lastBoost = tryBoost(computationTime, boostFrequency, lastBoost, outStream);
                     process = startNextProcess(processManager, outStream);
                 }
                 case TERMINATED -> {
                     addElapsedTime(processManager);
-                    lastBoost = tryBoost(computationTime, boostFrequency, lastBoost);
+                    lastBoost = tryBoost(computationTime, boostFrequency, lastBoost, outStream);
                     process = startNextProcess(processManager, outStream);
                 }
             }
         }
         outStream.close();
         return computationTime;
-    }
-
-    private static void logProcessStart(PrintStream outStream, RunningProcess process) {
-        outStream.println(process.getScheduledProcess().getName() + " started");
     }
 
     private RunningProcess startNextProcess(ProcessManager manager, PrintStream outStream) {
@@ -106,10 +103,10 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
         return arrived;
     }
 
-    private int tryBoost(int computation, int boostFrequency, int lastBoost) {
+    private int tryBoost(int computation, int boostFrequency, int lastBoost, PrintStream outSteam) {
         if (computation - lastBoost >= boostFrequency) {
             lastBoost = computation;
-            queueContainer.boost();
+            queueContainer.boost(outSteam);
         }
         return lastBoost;
     }

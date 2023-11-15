@@ -18,16 +18,16 @@
             <name>Filesystem</name>
             <complete-time>2000</complete-time>
             <arrive-time>0</arrive-time>
-            <work-time-average>15+0</work-time-average>
-            <block-time-average>900+0</block-time-average>
-            <boost>1</boost>
+            <work-time-average>30+0</work-time-average>
+            <block-time-average>200+0</block-time-average>
+            <boost>True</boost>
         </process>
         <process>
             <name>Short calculation</name>
             <complete-time>2000</complete-time>
             <arrive-time>0</arrive-time>
-            <work-time-average>20+0</work-time-average>
-            <block-time-average>20+0</block-time-average>
+            <work-time-average>30+0</work-time-average>
+            <block-time-average>30+0</block-time-average>
         </process>
         <process>
             <name>Long calculation</name>

@@ -1,5 +1,6 @@
 package univ.lab.scheduling;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -35,6 +36,10 @@ public class QueueContainer {
     }
     public void enqueue(RunningProcess process) {
         int maxBreaks = 2;
+        if (process.isBlocked()) {
+            queues.get(process.getCurrentPriority()).enqueue(process);
+            return;
+        }
         if (process.usedProvidedQuantum()) {
             process.addBreak();
             if (process.getBreaks() >= maxBreaks) {
@@ -77,13 +82,14 @@ public class QueueContainer {
         }
     }
 
-    public void boost() {
+    public void boost(PrintStream outStream) {
         List<RunningProcess> processesToBoost = new ArrayList<>();
         for (RoundRobinScheduler roundRobinScheduler : queues) {
             processesToBoost.addAll(roundRobinScheduler.removeBoostable());
         }
         for (RunningProcess process : processesToBoost) {
             process.setCurrentPriority(CONSOLE_PRIORITY_QUEUE);
+            outStream.println(process.getScheduledProcess().getName() + " was boosted!");
             queues.get(CONSOLE_PRIORITY_QUEUE).enqueueFirst(process);
         }
     }

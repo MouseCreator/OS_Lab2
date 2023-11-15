@@ -17,10 +17,6 @@ public class ProcessManager {
     public void setQuantumDuration(int quantumDuration) {
         this.quantumDuration = quantumDuration;
     }
-
-    public boolean isEmpty() {
-        return currentProcess == null;
-    }
     public ScheduledProcess.State run(PrintStream outStream) {
         currentTimeRunning++;
         if (currentProcess == null) {
