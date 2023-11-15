@@ -1,21 +1,20 @@
 package univ.lab.scheduling;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RoundRobinScheduler {
-    private List<ScheduledProcess> processList;
-    private List<ScheduledProcess> timeoutProcesses;
-    private int quantumNumber = 0;
+    private final List<ScheduledProcess> processList;
+    private final List<ScheduledProcess> timeoutProcesses;
+    private final int quantumNumber;
     private ScheduledProcess currentProcess;
-    public RoundRobinScheduler() {
-    }
-
-    public void updateState(List<ScheduledProcess> list, int quantumNumber) {
+    public RoundRobinScheduler(List<ScheduledProcess> list, int quantumNumber) {
         this.processList = list;
         this.quantumNumber = quantumNumber;
+        timeoutProcesses = new ArrayList<>();
     }
     enum RRState {
-        DONE,
+        DONE, FREE, RUNNING
     }
     public RRState run() {
         if (currentProcess == null) {
@@ -23,7 +22,11 @@ public class RoundRobinScheduler {
                 throw new IllegalStateException("Round-robin scheduler is not initialized with list of processes");
             }
             if (processList.isEmpty()) {
-                return RRState.DONE;
+                if (timeoutProcesses.isEmpty()) {
+                    return RRState.DONE;
+                }
+                processList.addAll(timeoutProcesses);
+                timeoutProcesses.clear();
             }
             currentProcess = processList.remove(0);
         }
@@ -35,13 +38,21 @@ public class RoundRobinScheduler {
                 if (currentProcess.getTimeouts() < quantumNumber) {
                     processList.add(currentProcess);
                 } else {
+                    currentProcess.resetTimeouts();
                     timeoutProcesses.add(currentProcess);
                 }
+                currentProcess = null;
             }
-            case BLOCKED -> processList.add(currentProcess);
+            case BLOCKED -> {
+                processList.add(currentProcess);
+                currentProcess = null;
+            }
             case TERMINATED -> currentProcess = null;
+            case READY, RUNNING -> {
+                return RRState.RUNNING;
+            }
 
         }
-        return RRState.DONE;
+        return RRState.FREE;
     }
 }
