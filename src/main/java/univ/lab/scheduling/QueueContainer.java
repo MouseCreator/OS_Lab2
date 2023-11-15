@@ -1,6 +1,5 @@
 package univ.lab.scheduling;
 
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -13,13 +12,13 @@ public class QueueContainer {
     public final static int IO_PRIORITY_QUEUE = 1;
     public final static int SHORT_PRIORITY_QUEUE = 2;
     public final static int LONG_PRIORITY_QUEUE = 3;
-    private int quantumDuration;
-    private int maxTimeBreaks;
     public QueueContainer(int containerSize) {
         this.containerSize = containerSize;
         initQueues();
     }
-
+    public int maxPriority() {
+        return LONG_PRIORITY_QUEUE;
+    }
     public static QueueContainer commonContainer() {
         return new QueueContainer(4);
     }
@@ -30,20 +29,14 @@ public class QueueContainer {
             queues.add(new ArrayList<>(containerSize));
         }
     }
-
     public void enqueue(ScheduledProcess process) {
-        changePriority(process, CONSOLE_PRIORITY_QUEUE);
-        addProcess(process);
+        this.queues.get(CONSOLE_PRIORITY_QUEUE).add(process);
     }
-
-    public void enqueueAndModify(ScheduledProcess process, PrintStream output) {
-        if (isProcessUsedFullQuantum(process)) {
-            output.println(process.getName() + " was stopped");
-            lowerPriorityForProcess(process);
-        } else {
-            output.println(process.getName() + " was blocked");
-        }
-        addProcess(process);
+    public void enqueue(ScheduledProcess process, int priority) {
+        this.queues.get(priority).add(process);
+    }
+    public void addFirst(ScheduledProcess process) {
+        this.queues.get(CONSOLE_PRIORITY_QUEUE).add(0, process);
     }
     public Optional<ScheduledProcess> dequeue() {
         for (List<ScheduledProcess> queue : queues) {
@@ -63,38 +56,7 @@ public class QueueContainer {
         return null;
     }
 
-    public void processBoost(ScheduledProcess process) {
-        remove(process);
-        enqueue(process);
-    }
-
-    private void addProcess(ScheduledProcess process) {
-        queues.get(0).add(process);
-    }
-
-
-    private void lowerPriorityForProcess(ScheduledProcess process) {
-
-    }
-
-    private void changePriority(ScheduledProcess process, int priority) {
-       // process.setCurrentPriority(priority);
-        int quantum = switch (priority) {
-            case CONSOLE_PRIORITY_QUEUE -> quantumDuration;
-            case IO_PRIORITY_QUEUE -> quantumDuration * 2;
-            case SHORT_PRIORITY_QUEUE -> quantumDuration * 4;
-            case LONG_PRIORITY_QUEUE -> quantumDuration * 8;
-            default -> throw new IllegalArgumentException("Unexpected priority: " + priority);
-        };
-       // process.setQuantumDuration(quantum);
-    }
-
-    private boolean isProcessUsedFullQuantum(ScheduledProcess process) {
-        return false;
-    }
-
-
-    private void remove(ScheduledProcess process) {
+    public void remove(ScheduledProcess process) {
         for (List<ScheduledProcess> queue : queues) {
            queue.remove(process);
         }
@@ -110,21 +72,5 @@ public class QueueContainer {
                 action.accept(process);
             }
         }
-    }
-
-    public void applyBoost() {
-        forEachProcess(p -> {
-            if (p.isToBoost()) {
-                processBoost(p);
-            }
-        });
-    }
-
-    public void setQuantumDuration(int quantumDuration) {
-        this.quantumDuration = quantumDuration;
-    }
-
-    public void setMaxTimeBreaks(int maxTimeBreaks) {
-        this.maxTimeBreaks = maxTimeBreaks;
     }
 }

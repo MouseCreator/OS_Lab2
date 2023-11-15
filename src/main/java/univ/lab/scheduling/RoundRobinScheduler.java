@@ -2,6 +2,7 @@ package univ.lab.scheduling;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class RoundRobinScheduler {
     private final List<ScheduledProcess> processList;
@@ -13,24 +14,24 @@ public class RoundRobinScheduler {
         this.quantumNumber = quantumNumber;
         timeoutProcesses = new ArrayList<>();
     }
-    enum RRState {
-        DONE, FREE, RUNNING
-    }
-    public RRState run() {
-        if (currentProcess == null) {
-            if (processList == null) {
-                throw new IllegalStateException("Round-robin scheduler is not initialized with list of processes");
+    public Optional<ScheduledProcess> getNextProcess() {
+        for (ScheduledProcess process : processList) {
+            if (process.getState()== ScheduledProcess.State.READY) {
+                return Optional.of(process);
             }
-            if (processList.isEmpty()) {
-                if (timeoutProcesses.isEmpty()) {
-                    return RRState.DONE;
-                }
-                processList.addAll(timeoutProcesses);
-                timeoutProcesses.clear();
-            }
-            currentProcess = processList.remove(0);
         }
-        currentProcess.nextTick();
-        return RRState.FREE;
+        return Optional.empty();
+    }
+
+    public void addProcess(ScheduledProcess process) {
+        this.processList.add(process);
+    }
+
+    public void addAndModifyProcess(ScheduledProcess process) {
+        //process.incrementQuantumNumberUsed
+        // if process used max quantum number
+            //add process to extra queue
+        // else
+            // add process to current queue
     }
 }

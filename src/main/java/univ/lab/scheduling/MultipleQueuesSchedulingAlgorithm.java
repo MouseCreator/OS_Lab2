@@ -43,37 +43,35 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
         int boostFrequency = 500;
         int boostIterCounter = 0;
         ScheduledProcess process = null;
-        ProcessRunner runner = new ProcessRunner();
+        ProcessManager processManager = new ProcessManager();
         for (computationTime = 0; computationTime < runtime; computationTime++, boostIterCounter++) {
             int arrived = checkForArriveProcess(computationTime, scheduledProcesses, outStream);
             boostIterCounter = tryBoost(boostFrequency, boostIterCounter);
-            if (process == null) {
+            if (processManager.isEmpty()) {
                 if (arrived > 0) {
-                    process = startNextProcess(computationTime, runner);
+                    process = startNextProcess(processManager);
                 } else {
                     outStream.println("Idle...");
                     queueContainer.applyElapsedTime(1); //may be replaced with "find min value" and skip iterations
-                    process = startNextProcess(computationTime, runner);
+                    process = startNextProcess(processManager);
                     logProcessStart(outStream, process);
                     continue;
                 }
             }
-            ScheduledProcess.State currentProcessState = runner.nextTick();
+            ScheduledProcess.State currentProcessState = processManager.run();
             switch (currentProcessState) {
                 case RUNNING, READY -> {
                     //continue
                 }
-                case BLOCKED -> {
-                    addElapsedTime(computationTime, runner);
-                    queueContainer.enqueueAndModify(process, outStream);
-                    process = startNextProcess(computationTime, runner);
-                    logProcessStart(outStream, process);
+                case BLOCKED, TERMINATED -> {
+                    addElapsedTime(computationTime, processManager);
+                    process = startNextProcess(processManager);
                 }
-                case TERMINATED -> {
-                    addElapsedTime(computationTime, runner);
-                    outStream.println(process.getName() + " terminated");
-                    process = startNextProcess(computationTime, runner);
-                    logProcessStart(outStream, process);
+                case TIMEOUT -> {
+                    //add process breaks
+                    //if process breaks >= max breaks
+                        //change process priority
+                    //enqueue process
                 }
             }
         }
@@ -85,11 +83,11 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
         outStream.println(process.getName() + " started");
     }
 
-    private ScheduledProcess startNextProcess(int computationTime, ProcessRunner runner) {
+    private ScheduledProcess startNextProcess(ProcessManager manager) {
         ScheduledProcess process;
         process = getNext();
         if (process != null) {
-            runner.startProcess(process, computationTime);
+            manager.startProcess(process);
         }
         return process;
     }
@@ -113,7 +111,6 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     }
 
     private void boost() {
-        queueContainer.applyBoost();
     }
 
     private ScheduledProcess getNext() {
@@ -123,13 +120,13 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
         return process;
     }
 
-    private void addElapsedTime(int computationTime, ProcessRunner runner) {
-        int timeElapsed = computationTime - runner.timeStart();
+    private void addElapsedTime(int computationTime, ProcessManager manager) {
+        int timeElapsed = manager.getRuntime();
         queueContainer.applyElapsedTime(timeElapsed);
     }
 
     private void registerProcess(ScheduledProcess process, PrintStream out) {
-        queueContainer.enqueue(process);
+        queueContainer.enqueue(process, 0);
         out.println("Registered process: " + process.getName());
         //out prints info
     }

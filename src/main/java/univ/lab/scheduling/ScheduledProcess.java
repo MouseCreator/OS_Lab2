@@ -4,6 +4,9 @@ public class ScheduledProcess {
     private State state;
     private int fullElapsedTime;
     private int timeToComplete;
+    private int nextBlockTime;
+    private int nextWorkTime;
+    private int currentPhaseTime;
     private TimeGenerator blockTimeGenerator;
     private TimeGenerator workTimeGenerator;
     private boolean toBoost;
@@ -20,6 +23,26 @@ public class ScheduledProcess {
 
     public void start() {
         state = State.RUNNING;
+        nextWorkTime = getNextWorkTime();
+        resetPhase();
+    }
+
+    private void block() {
+        state = State.BLOCKED;
+        nextBlockTime = getNextBlockTime();
+        resetPhase();
+    }
+
+    public void stop() {
+        if (state != State.RUNNING) {
+            throw new IllegalStateException("Process is not stopped while not running");
+        }
+        state = State.READY;
+        resetPhase();
+    }
+
+    private void resetPhase() {
+        currentPhaseTime = 0;
     }
 
     public void nextTick() {
@@ -27,13 +50,27 @@ public class ScheduledProcess {
             throw new IllegalStateException("Process is not in running state, while next tick is called");
         }
         fullElapsedTime++;
+        currentPhaseTime++;
         if (fullElapsedTime >= timeToComplete) {
             state = State.TERMINATED;
+        }
+        if (currentPhaseTime >= nextWorkTime) {
+            block();
         }
     }
 
     public void applyTime(int timeElapsed) {
-
+        if (state == State.READY) {
+            return;
+        }
+        if (state != State.BLOCKED) {
+            throw new IllegalStateException("Called apply time, when process is not blocked");
+        }
+        currentPhaseTime += timeElapsed;
+        if (currentPhaseTime > nextBlockTime) {
+            state = State.READY;
+            resetPhase();
+        }
     }
 
     public void setTimeToComplete(int timeToComplete) {
@@ -54,7 +91,7 @@ public class ScheduledProcess {
     }
 
     enum State {
-        RUNNING, BLOCKED, READY, TERMINATED
+        RUNNING, BLOCKED, READY, TIMEOUT, TERMINATED
     }
 
     public boolean isToBoost() {
@@ -80,10 +117,10 @@ public class ScheduledProcess {
         this.workTimeGenerator = generator;
     }
 
-    public int getNextBlockTime() {
+    private int getNextBlockTime() {
         return blockTimeGenerator.generateTime();
     }
-    public int getNextWorkTime() {
+    private int getNextWorkTime() {
         return workTimeGenerator.generateTime();
     }
 }
