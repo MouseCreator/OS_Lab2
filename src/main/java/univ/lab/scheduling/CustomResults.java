@@ -31,6 +31,7 @@ public class CustomResults {
 
     public String toResultString() {
         StringBuilder builder = new StringBuilder(title);
+        builder.append("\n\n");
         builder.append("Boost frequency: ").append(properties.getBoostFrequency()).append('\n');
         builder.append("Quantum duration: ").append(properties.getQuantumDuration()).append('\n');
         builder.append("Breaks limit: ").append(properties.getBreaks()).append('\n');

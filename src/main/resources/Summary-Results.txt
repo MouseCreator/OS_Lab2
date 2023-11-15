@@ -1,4 +1,6 @@
-4 QueuesBoost frequency: 500
+4 Queues
+
+Boost frequency: 500
 Quantum duration: 20
 Breaks limit: 2
 Expected Runtime: 6000
