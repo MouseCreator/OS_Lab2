@@ -32,10 +32,10 @@
         </process>
         <process>
             <name>Long calculation</name>
-            <complete-time>3000</complete-time>
+            <complete-time>4000</complete-time>
             <arrive-time>0</arrive-time>
             <work-time-average>80+0</work-time-average>
-            <block-time-average>20+0</block-time-average>
+            <block-time-average>10+0</block-time-average>
         </process>
     </processes>
 </properties>

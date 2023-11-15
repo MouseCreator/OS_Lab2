@@ -11,6 +11,7 @@ public class CustomResults {
 
     private SimulationProperties properties;
     private String title = "Algorithm";
+    private int timeIdle;
 
     public void setProcessList(List<ScheduledProcess> processList) {
         this.processList = processList;
@@ -35,6 +36,7 @@ public class CustomResults {
         builder.append("Breaks limit: ").append(properties.getBreaks()).append('\n');
         builder.append("Expected Runtime: ").append(properties.getRuntime()).append('\n');
         builder.append("Actual Runtime: ").append(calculationTime).append('\n');
+        builder.append("Time idle: ").append(timeIdle).append('\n');
         List<List<String>> table = new ArrayList<>();
         List<String> titleRow = new ArrayList<>();
         titleRow.add("Name");
@@ -64,10 +66,15 @@ public class CustomResults {
         for (List<String> row : table) {
             for (int i = 0; i < lengths.size(); i++) {
                 int diff = lengths.get(i) - row.get(i).length();
-                builder.append(row.get(i)).append(" ".repeat(diff % 4)).append("\t".repeat(diff / 4));
+                String str = row.get(i) + " ".repeat(diff % 4) + "\t".repeat(diff / 4);
+                builder.append(str);
             }
             builder.append("\n");
         }
         return builder.toString();
+    }
+
+    public void setTimeIdle(int timeIdle) {
+       this.timeIdle = timeIdle;
     }
 }

@@ -11,618 +11,841 @@ Process Long calculation used quantum!
 Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
 Process Console was blocked!
 Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
+Process Filesystem was blocked!
 Process Short calculation started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
-Process Short calculation used quantum!
+Process Short calculation was blocked!
 Process Long calculation started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
 Process Long calculation used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Long calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Long calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Long calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Filesystem was boosted!
+Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Filesystem used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Console was blocked!
+Process Short calculation started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
+Process Short calculation used quantum!
+Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
+Process Filesystem was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Filesystem was boosted!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Filesystem used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Filesystem was boosted!
+Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Filesystem was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Console was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
 Process Filesystem used quantum!
 Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
-Process Long calculation used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
 Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
-Process Long calculation used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
-Process Filesystem used quantum!
-Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
-Process Long calculation used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
-Process Long calculation used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
-Process Filesystem used quantum!
-Process Short calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
-Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
 Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
-Process Filesystem used quantum!
-Process Short calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
-Process Short calculation used quantum!
 Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Filesystem was boosted!
-Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Short calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
 Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
-Process Short calculation used quantum!
 Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 1
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 1
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 1
+Filesystem was boosted!
+Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Filesystem was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 1
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Console was blocked!
+Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Filesystem used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Filesystem was boosted!
+Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Filesystem was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Filesystem was boosted!
+Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Filesystem used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
 Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
 Process Console was blocked!
 Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
-Process Filesystem used quantum!
+Process Filesystem was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
 Filesystem was boosted!
 Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
 Process Filesystem used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
 Filesystem was boosted!
 Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
+Process Filesystem was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
-Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
 Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
 Process Console was blocked!
-Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 4. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 3. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 2. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Filesystem was boosted!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
 Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
 Process Filesystem used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Short calculation used quantum!
 Filesystem was boosted!
 Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
+Process Filesystem was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
 Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
 Process Console was blocked!
-Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 4. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 3. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 2. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Short calculation used quantum!
-Process Filesystem started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Filesystem used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Short calculation used quantum!
-Process Filesystem started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Filesystem used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
-Process Short calculation used quantum!
-Process Filesystem started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Filesystem used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
-Process Short calculation used quantum!
-Filesystem was boosted!
 Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
 Process Filesystem used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
-Process Short calculation used quantum!
-Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Console was blocked!
-Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Filesystem was boosted!
-Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
-Process Short calculation used quantum!
-Filesystem was boosted!
-Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
-Process Long calculation used quantum!
-Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Console was blocked!
-Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 4. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 3. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 2. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
-Process Long calculation used quantum!
-Process Filesystem started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Filesystem used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Short calculation used quantum!
-Filesystem was boosted!
-Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
-Process Long calculation used quantum!
-Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Console was blocked!
-Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Filesystem was boosted!
-Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 0
-Process Long calculation used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
-Process Short calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 0
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
 Filesystem was boosted!
 Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Short calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
+Process Filesystem was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
+Process Short calculation used quantum!
+Process Short calculation started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
+Process Short calculation was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Process Short calculation started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
 Process Short calculation was terminated!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 0
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 0
+Filesystem was boosted!
+Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
+Process Filesystem used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 1
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
 Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 1
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
 Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 6. Current breaks: 1
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
 Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 5. Current breaks: 1
-Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 4. Current breaks: 1
-Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 3. Current breaks: 1
-Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 2. Current breaks: 1
-Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 1. Current breaks: 1
-Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 8. Current breaks: 0
-Process Long calculation used quantum!
-Process Long calculation started! Current priority: 3. Current quantum remain: 7. Current breaks: 0
-Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
 Process Console started! Current priority: 0. Current quantum remain: 1. Current breaks: 0
 Process Console was blocked!
 Process Filesystem started! Current priority: 0. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 2. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 1. Current quantum remain: 1. Current breaks: 1
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
-Process Filesystem used quantum!
-Process Filesystem started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Filesystem was blocked!
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 1. Current breaks: 0
+Process Long calculation was blocked!
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Idle...
+Process Long calculation started! Current priority: 2. Current quantum remain: 4. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 3. Current breaks: 0
+Process Long calculation used quantum!
+Process Long calculation started! Current priority: 2. Current quantum remain: 2. Current breaks: 0

@@ -24,12 +24,15 @@ public class ScheduledProcess {
 
     public void start() {
         state = State.RUNNING;
-        nextWorkTime = getNextWorkTime();
+        if (nextWorkTime == 0) {
+            nextWorkTime = getNextWorkTime();
+        }
         resetPhase();
     }
 
     private void block() {
         state = State.BLOCKED;
+        nextWorkTime = 0;
         nextBlockTime = getNextBlockTime();
         stats.addBlocked();
         resetPhase();
@@ -39,6 +42,7 @@ public class ScheduledProcess {
         if (state != State.RUNNING) {
             throw new IllegalStateException("Process is not stopped while not running");
         }
+        nextWorkTime -= currentPhaseTime;
         state = State.READY;
         resetPhase();
     }

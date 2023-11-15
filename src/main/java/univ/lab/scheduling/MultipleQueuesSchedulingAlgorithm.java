@@ -37,6 +37,7 @@ public class MultipleQueuesSchedulingAlgorithm {
         PrintStream outStream = new PrintStream(new FileOutputStream(resultsFile));
         CustomResults results = new CustomResults();
         int computationTime;
+        int timeIdle = 0;
         int lastBoost = 0;
         RunningProcess process = null;
         results.setProcessList(new ArrayList<>(scheduledProcesses));
@@ -48,9 +49,8 @@ public class MultipleQueuesSchedulingAlgorithm {
                 if (arrived > 0) {
                     process = startNextProcess(processManager, outStream);
                 } else {
-                    if (scheduledProcesses.isEmpty())
-                        break;
                     outStream.println("Idle...");
+                    timeIdle++;
                     queueContainer.applyElapsedTime(1);
                     process = startNextProcess(processManager, outStream);
                     continue;
@@ -79,6 +79,7 @@ public class MultipleQueuesSchedulingAlgorithm {
         }
         outStream.close();
         results.setCalculationTime(computationTime);
+        results.setTimeIdle(timeIdle);
         return results;
     }
 
