@@ -23,12 +23,10 @@ public class ProcessManager {
             throw new IllegalStateException("Process Manager is not initialized");
         }
         currentProcess.nextTick();
-
         ScheduledProcess.State state = currentProcess.getState();
         switch (state) {
             case READY -> throw new IllegalStateException("Process is running in READY state");
             case TERMINATED, BLOCKED -> {
-                reset();
                 return state;
             }
             case RUNNING -> {
@@ -38,15 +36,11 @@ public class ProcessManager {
 
         if (currentTimeRunning >= quantumDuration) {
             currentProcess.stop();
-            reset();
             return ScheduledProcess.State.TIMEOUT;
         }
-        return state;
+        return ScheduledProcess.State.RUNNING;
     }
 
-    private void reset() {
-        this.currentProcess = null;
-    }
 
     public int getRuntime() {
         return currentTimeRunning;

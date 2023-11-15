@@ -64,7 +64,7 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
                     //continue
                 }
                 case BLOCKED, TERMINATED -> {
-                    addElapsedTime(computationTime, processManager);
+                    addElapsedTime(processManager);
                     process = startNextProcess(processManager);
                 }
                 case TIMEOUT -> {
@@ -120,7 +120,7 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
         return process;
     }
 
-    private void addElapsedTime(int computationTime, ProcessManager manager) {
+    private void addElapsedTime(ProcessManager manager) {
         int timeElapsed = manager.getRuntime();
         queueContainer.applyElapsedTime(timeElapsed);
     }
