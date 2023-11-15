@@ -37,9 +37,9 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     }
 
     private int calculate(int runtime, List<ScheduledProcess> scheduledProcesses) throws FileNotFoundException {
-        int quantumDuration = 20;
+        int quantumDuration = 10;
         String resultsFile = "src/main/resources/Summary-Processes.txt";
-        PrintStream outStream = System.out; // new PrintStream(new FileOutputStream(resultsFile));
+        PrintStream outStream = new PrintStream(new FileOutputStream(resultsFile));
         int computationTime;
         int boostFrequency = 500;
         int lastBoost = 0;

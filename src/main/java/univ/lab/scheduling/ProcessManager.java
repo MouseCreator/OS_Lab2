@@ -1,6 +1,5 @@
 package univ.lab.scheduling;
 
-import java.io.OutputStream;
 import java.io.PrintStream;
 
 public class ProcessManager {
@@ -10,7 +9,7 @@ public class ProcessManager {
     public void startProcess(RunningProcess process, PrintStream outStream) {
         this.currentProcess = process;
         currentTimeRunning = 0;
-        outStream.printf("Process %s started! Current priority: %d. Current quantum remain: %d. Current breaks: %d.\n",
+        outStream.printf("Process %s started! Current priority: %d. Current quantum remain: %d. Current breaks: %d\n",
                 name(), currentProcess.getCurrentPriority(), currentProcess.getQuantumRemain(), currentProcess.getBreaks());
         process.start();
     }
@@ -47,6 +46,7 @@ public class ProcessManager {
 
         if (currentTimeRunning >= quantumDuration) {
             currentProcess.getScheduledProcess().stop();
+            outStream.println("Process " + name() + " used quantum!");
             return ScheduledProcess.State.TIMEOUT;
         }
         return ScheduledProcess.State.RUNNING;

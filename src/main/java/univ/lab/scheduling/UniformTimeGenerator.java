@@ -7,9 +7,9 @@ public class UniformTimeGenerator implements TimeGenerator {
     private final int meanValue;
     private final Random random;
 
-    public UniformTimeGenerator(int deviation, int meanValue) {
-        this.deviation = deviation;
+    public UniformTimeGenerator(int meanValue, int deviation) {
         this.meanValue = meanValue;
+        this.deviation = deviation;
         random = new Random();
     }
 

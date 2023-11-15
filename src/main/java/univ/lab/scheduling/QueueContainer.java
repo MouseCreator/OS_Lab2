@@ -36,12 +36,11 @@ public class QueueContainer {
     public void enqueue(RunningProcess process) {
         int maxBreaks = 2;
         if (process.usedProvidedQuantum()) {
+            process.addBreak();
             if (process.getBreaks() >= maxBreaks) {
                 changeProcessPriority(process);
                 queues.get(process.getCurrentPriority()).registerProcess(process.getScheduledProcess());
                 return;
-            } else {
-                process.addBreak();
             }
         }
         queues.get(process.getCurrentPriority()).enqueue(process);
