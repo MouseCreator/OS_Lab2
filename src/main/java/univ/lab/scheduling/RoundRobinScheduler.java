@@ -20,9 +20,16 @@ public class RoundRobinScheduler {
         if (activeProcessList.isEmpty()) {
             swapLists();
         }
-        for (RunningProcess process : activeProcessList) {
-            if (process.getScheduledProcess().getState()== ScheduledProcess.State.READY) {
-                return Optional.of(process);
+        int size = activeProcessList.size();
+        if (size==0) {
+            return Optional.empty();
+        }
+        for (int i = 0; i < size; i++) {
+            RunningProcess first = activeProcessList.remove(0);
+            if (first.isReady()) {
+                return Optional.of(first);
+            } else {
+                activeProcessList.add(first);
             }
         }
         return Optional.empty();
@@ -68,11 +75,6 @@ public class RoundRobinScheduler {
         runningProcesses.addAll(activeProcessList);
         runningProcesses.addAll(timeoutProcesses);
         return runningProcesses;
-    }
-
-    public void remove(RunningProcess process) {
-        activeProcessList.remove(process);
-        timeoutProcesses.remove(process);
     }
 
     public List<RunningProcess> removeBoostable() {

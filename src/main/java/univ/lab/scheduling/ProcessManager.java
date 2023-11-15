@@ -1,5 +1,7 @@
 package univ.lab.scheduling;
 
+import java.io.PrintStream;
+
 public class ProcessManager {
     public RunningProcess currentProcess;
     private int quantumDuration;
@@ -17,16 +19,22 @@ public class ProcessManager {
     public boolean isEmpty() {
         return currentProcess == null;
     }
-    public ScheduledProcess.State run() {
+    public ScheduledProcess.State run(PrintStream outStream) {
         currentTimeRunning++;
         if (currentProcess == null) {
             throw new IllegalStateException("Process Manager is not initialized");
         }
         currentProcess.getScheduledProcess().nextTick();
         ScheduledProcess.State state = currentProcess.getScheduledProcess().getState();
+        String name = currentProcess.getScheduledProcess().getName();
         switch (state) {
             case READY -> throw new IllegalStateException("Process is running in READY state");
-            case TERMINATED, BLOCKED -> {
+            case TERMINATED -> {
+                outStream.println("Process " + name + " was terminated!");
+                return state;
+            }
+            case BLOCKED -> {
+                outStream.println("Process" + name + " was blocked!");
                 return state;
             }
             case RUNNING -> {

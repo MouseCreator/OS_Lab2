@@ -1,5 +1,6 @@
 package univ.lab.scheduling;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -47,14 +48,10 @@ public class QueueContainer {
 
     private void changeProcessPriority(RunningProcess runningProcess) {
         int priority = runningProcess.getCurrentPriority();
-        if (priority != LONG_PRIORITY_QUEUE) {
+        if (priority != maxPriority()) {
             runningProcess.setCurrentPriority(priority+1);
         }
         runningProcess.resetBreaks();
-    }
-
-    public void addFirst(ScheduledProcess process) {
-       // add first to this.queues.get(CONSOLE_PRIORITY_QUEUE)
     }
     public Optional<RunningProcess> dequeue() {
         for (RoundRobinScheduler queue : queues) {
@@ -65,23 +62,11 @@ public class QueueContainer {
         return Optional.empty();
     }
 
-    private ScheduledProcess getReadyProcess(List<ScheduledProcess> queue) {
-        for (ScheduledProcess process : queue) {
-            if (process.getState()== ScheduledProcess.State.READY) {
-                return process;
-            }
-        }
-        return null;
-    }
-
-    public void remove(RunningProcess process) {
-        for (RoundRobinScheduler roundRobinScheduler : queues) {
-           roundRobinScheduler.remove(process);
-        }
-    }
-
     public void applyElapsedTime(int timeElapsed) {
-        forEachProcess(p-> p.getScheduledProcess().applyTime(timeElapsed));
+        forEachProcess(p-> {
+            var s = p.getScheduledProcess();
+            s.applyTime(timeElapsed);
+        });
     }
 
     private void forEachProcess(Consumer<RunningProcess> action) {

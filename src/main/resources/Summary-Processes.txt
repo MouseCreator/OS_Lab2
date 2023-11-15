@@ -2,7 +2,3 @@ Registered process: Filesystem
 Registered process: Short calculation
 Registered process: Long calculation
 Registered process: Console
-Filesystem terminated
-Short calculation started
-Short calculation terminated
-Long calculation started

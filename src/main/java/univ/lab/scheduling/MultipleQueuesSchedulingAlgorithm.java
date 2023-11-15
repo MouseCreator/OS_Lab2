@@ -10,7 +10,6 @@ import java.util.*;
 
 public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<ScheduledProcess>{
     private final QueueContainer queueContainer;
-    private final int quantumDuration = 20;
     public MultipleQueuesSchedulingAlgorithm(QueueContainer queueContainer) {
         this.queueContainer = queueContainer;
     }
@@ -38,8 +37,9 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     }
 
     private int calculate(int runtime, List<ScheduledProcess> scheduledProcesses) throws FileNotFoundException {
+        int quantumDuration = 20;
         String resultsFile = "src/main/resources/Summary-Processes.txt";
-        PrintStream outStream = new PrintStream(new FileOutputStream(resultsFile));
+        PrintStream outStream = System.out; // new PrintStream(new FileOutputStream(resultsFile));
         int computationTime;
         int boostFrequency = 500;
         int boostIterCounter = 0;
@@ -59,7 +59,7 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
                     continue;
                 }
             }
-            ScheduledProcess.State currentProcessState = processManager.run();
+            ScheduledProcess.State currentProcessState = processManager.run(outStream);
             switch (currentProcessState) {
                 case RUNNING, READY -> {
                     //continue
@@ -89,8 +89,7 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     }
 
     private RunningProcess startNextProcess(ProcessManager manager) {
-        RunningProcess process;
-        process = getNext();
+        RunningProcess process = getNext();
         if (process != null) {
             manager.startProcess(process);
         }

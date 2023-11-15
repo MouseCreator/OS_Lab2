@@ -53,4 +53,8 @@ public class RunningProcess {
     public void start() {
         this.scheduledProcess.start();
     }
+
+    public boolean isReady() {
+        return scheduledProcess.getState()== ScheduledProcess.State.READY;
+    }
 }
