@@ -3,7 +3,6 @@ package univ.lab.scheduling;
 public class RunningProcess {
     private ScheduledProcess scheduledProcess;
     private int currentQuantum;
-    private int maxQuantum;
     private int timesBreak;
     private int currentPriority;
     public static RunningProcess fromScheduledProcess(RoundRobinScheduler roundRobinScheduler, ScheduledProcess process) {
@@ -11,7 +10,6 @@ public class RunningProcess {
         runningProcess.scheduledProcess = process;
         runningProcess.timesBreak = 0;
         runningProcess.currentQuantum = roundRobinScheduler.getMaxQuantum();
-        runningProcess.maxQuantum = roundRobinScheduler.getMaxQuantum();
         runningProcess.currentPriority = roundRobinScheduler.getPriority();
         return runningProcess;
     }
@@ -52,9 +50,14 @@ public class RunningProcess {
 
     public void start() {
         this.scheduledProcess.start();
+        useQuantum();
     }
 
     public boolean isReady() {
         return scheduledProcess.getState()== ScheduledProcess.State.READY;
+    }
+
+    public int getQuantumRemain() {
+        return currentQuantum;
     }
 }

@@ -1,14 +1,17 @@
 package univ.lab.scheduling;
 
+import java.io.OutputStream;
 import java.io.PrintStream;
 
 public class ProcessManager {
     public RunningProcess currentProcess;
     private int quantumDuration;
     private int currentTimeRunning = 0;
-    public void startProcess(RunningProcess process) {
+    public void startProcess(RunningProcess process, PrintStream outStream) {
         this.currentProcess = process;
         currentTimeRunning = 0;
+        outStream.printf("Process %s started! Current priority: %d. Current quantum remain: %d. Current breaks: %d.\n",
+                name(), currentProcess.getCurrentPriority(), currentProcess.getQuantumRemain(), currentProcess.getBreaks());
         process.start();
     }
 
@@ -26,15 +29,15 @@ public class ProcessManager {
         }
         currentProcess.getScheduledProcess().nextTick();
         ScheduledProcess.State state = currentProcess.getScheduledProcess().getState();
-        String name = currentProcess.getScheduledProcess().getName();
+
         switch (state) {
             case READY -> throw new IllegalStateException("Process is running in READY state");
             case TERMINATED -> {
-                outStream.println("Process " + name + " was terminated!");
+                outStream.println("Process " + name() + " was terminated!");
                 return state;
             }
             case BLOCKED -> {
-                outStream.println("Process" + name + " was blocked!");
+                outStream.println("Process " + name() + " was blocked!");
                 return state;
             }
             case RUNNING -> {
@@ -47,6 +50,13 @@ public class ProcessManager {
             return ScheduledProcess.State.TIMEOUT;
         }
         return ScheduledProcess.State.RUNNING;
+    }
+
+    private String name() {
+        if (currentProcess == null) {
+            throw new IllegalStateException("Called name when process is not initialized!");
+        }
+        return currentProcess.getScheduledProcess().getName();
     }
 
 

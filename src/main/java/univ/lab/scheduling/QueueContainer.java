@@ -1,6 +1,5 @@
 package univ.lab.scheduling;
 
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -39,6 +38,8 @@ public class QueueContainer {
         if (process.usedProvidedQuantum()) {
             if (process.getBreaks() >= maxBreaks) {
                 changeProcessPriority(process);
+                queues.get(process.getCurrentPriority()).registerProcess(process.getScheduledProcess());
+                return;
             } else {
                 process.addBreak();
             }
