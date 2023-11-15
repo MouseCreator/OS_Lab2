@@ -92,4 +92,14 @@ public class QueueContainer {
         }
     }
 
+    public void boost() {
+        List<RunningProcess> processesToBoost = new ArrayList<>();
+        for (RoundRobinScheduler roundRobinScheduler : queues) {
+            processesToBoost.addAll(roundRobinScheduler.removeBoostable());
+        }
+        for (RunningProcess process : processesToBoost) {
+            process.setCurrentPriority(CONSOLE_PRIORITY_QUEUE);
+            queues.get(CONSOLE_PRIORITY_QUEUE).enqueueFirst(process);
+        }
+    }
 }

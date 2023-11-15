@@ -1,6 +1,7 @@
 package univ.lab.scheduling;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -72,5 +73,30 @@ public class RoundRobinScheduler {
     public void remove(RunningProcess process) {
         activeProcessList.remove(process);
         timeoutProcesses.remove(process);
+    }
+
+    public List<RunningProcess> removeBoostable() {
+        List<RunningProcess> removed = new ArrayList<>();
+        removeBoostableFromList(activeProcessList, removed);
+        removeBoostableFromList(timeoutProcesses, removed);
+        return removed;
+    }
+
+    private void removeBoostableFromList(List<RunningProcess> target, List<RunningProcess> removed) {
+        Iterator<RunningProcess> iterator = target.iterator();
+        while (iterator.hasNext()) {
+            RunningProcess process = iterator.next();
+            if (process.getScheduledProcess().isToBoost()) {
+                removed.add(process);
+                iterator.remove();
+            }
+        }
+    }
+
+    public void enqueueFirst(RunningProcess process) {
+        process.resetBreaks();
+        process.provideQuantum(quantumNumber);
+        process.setCurrentPriority(priority);
+        activeProcessList.add(0, process);
     }
 }

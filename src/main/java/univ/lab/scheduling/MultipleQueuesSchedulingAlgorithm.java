@@ -46,9 +46,8 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
         RunningProcess process = null;
         ProcessManager processManager = new ProcessManager();
         processManager.setQuantumDuration(quantumDuration);
-        for (computationTime = 0; computationTime < runtime; computationTime++, boostIterCounter++) {
+        for (computationTime = 0; computationTime < runtime; computationTime++) {
             int arrived = checkForArriveProcess(computationTime, scheduledProcesses, outStream);
-            boostIterCounter = tryBoost(boostFrequency, boostIterCounter);
             if (processManager.isEmpty()) {
                 if (arrived > 0) {
                     process = startNextProcess(processManager);
@@ -71,10 +70,12 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
                         throw new NullPointerException("Trying to enqueue null process");
                     }
                     queueContainer.enqueue(process);
+                    boostIterCounter = tryBoost(computationTime, boostFrequency, boostIterCounter);
                     process = startNextProcess(processManager);
                 }
                 case TERMINATED -> {
                     addElapsedTime(processManager);
+                    boostIterCounter = tryBoost(computationTime, boostFrequency, boostIterCounter);
                     process = startNextProcess(processManager);
                 }
             }
@@ -106,16 +107,14 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
         return arrived;
     }
 
-    private int tryBoost(int boostFrequency, int boostIterCounter) {
-        if (boostIterCounter >= boostFrequency) {
-            boostIterCounter = 0;
-            boost();
+    private int tryBoost(int computation, int boostFrequency, int lastBoost) {
+        if (computation - lastBoost >= boostFrequency) {
+            lastBoost = computation;
+            queueContainer.boost();
         }
-        return boostIterCounter;
+        return lastBoost;
     }
 
-    private void boost() {
-    }
 
     private RunningProcess getNext() {
         RunningProcess process;
@@ -132,7 +131,6 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     private void registerProcess(ScheduledProcess process, PrintStream out) {
         queueContainer.register(process);
         out.println("Registered process: " + process.getName());
-        //out prints info
     }
 
 
