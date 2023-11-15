@@ -4,7 +4,7 @@ public class ScheduledProcess {
     private State state;
     private int timesBreak;
     private int currentPriority;
-    private int maxQuantum;
+    private int quantumDuration;
     private int currentQuantum;
     private int currentPhaseTimeElapsed;
     private int fullElapsedTime;
@@ -16,7 +16,7 @@ public class ScheduledProcess {
     private boolean toBoost;
     private int timeArrive;
     private String name;
-
+    int timeouts = 0;
     public State getState() {
         return state;
     }
@@ -37,20 +37,29 @@ public class ScheduledProcess {
         fullElapsedTime++;
         if (fullElapsedTime >= timeToComplete) {
             state = State.TERMINATED;
+            timeouts = 0;
             resetPhase();
         }
         else if (currentPhaseTimeElapsed >= nextBlockTime) {
             state = State.BLOCKED;
             timeBlocking = timeToBlockGenerator.generateTime();
             setCurrentQuantum(currentPhaseTimeElapsed);
+            timeouts = 0;
             resetPhase();
         }
-        else if (currentPhaseTimeElapsed >= maxQuantum) {
-            state = State.BLOCKED;
-            timeBlocking = 0;
+        else if (currentPhaseTimeElapsed >= quantumDuration) {
+            state = State.TIMEOUT;
+            timeouts++;
             setCurrentQuantum(currentPhaseTimeElapsed);
             resetPhase();
         }
+    }
+
+    public int getTimeouts() {
+        return timeouts;
+    }
+    public void resetTimeouts() {
+        timeouts = 0;
     }
 
     private void resetPhase() {
@@ -85,8 +94,12 @@ public class ScheduledProcess {
         this.name = name;
     }
 
+    public void setState(State newState) {
+        state = newState;
+    }
+
     enum State {
-        RUNNING, BLOCKED, READY, TERMINATED
+        RUNNING, BLOCKED, READY, TERMINATED, TIMEOUT
     }
 
     public int getTimesBreak() {
@@ -105,12 +118,12 @@ public class ScheduledProcess {
         this.currentPriority = currentPriority;
     }
 
-    public int getMaxQuantum() {
-        return maxQuantum;
+    public int getQuantumDuration() {
+        return quantumDuration;
     }
 
-    public void setMaxQuantum(int maxQuantum) {
-        this.maxQuantum = maxQuantum;
+    public void setQuantumDuration(int quantumDuration) {
+        this.quantumDuration = quantumDuration;
     }
 
     public int getCurrentQuantum() {

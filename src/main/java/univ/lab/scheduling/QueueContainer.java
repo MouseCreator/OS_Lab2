@@ -95,11 +95,11 @@ public class QueueContainer {
             case LONG_PRIORITY_QUEUE -> quantumDuration * 8;
             default -> throw new IllegalArgumentException("Unexpected priority: " + priority);
         };
-        process.setMaxQuantum(quantum);
+        process.setQuantumDuration(quantum);
     }
 
     private boolean isProcessUsedFullQuantum(ScheduledProcess process) {
-        return process.getMaxQuantum() <= process.getCurrentQuantum();
+        return process.getQuantumDuration() <= process.getCurrentQuantum();
     }
 
 
