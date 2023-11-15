@@ -1,10 +1,10 @@
 package univ.lab.scheduling;
 
 public class ProcessManager {
-    public ScheduledProcess currentProcess;
+    public RunningProcess currentProcess;
     private int quantumDuration;
     private int currentTimeRunning = 0;
-    public void startProcess(ScheduledProcess process) {
+    public void startProcess(RunningProcess process) {
         this.currentProcess = process;
         currentTimeRunning = 0;
         process.start();
@@ -22,8 +22,8 @@ public class ProcessManager {
         if (currentProcess == null) {
             throw new IllegalStateException("Process Manager is not initialized");
         }
-        currentProcess.nextTick();
-        ScheduledProcess.State state = currentProcess.getState();
+        currentProcess.getScheduledProcess().nextTick();
+        ScheduledProcess.State state = currentProcess.getScheduledProcess().getState();
         switch (state) {
             case READY -> throw new IllegalStateException("Process is running in READY state");
             case TERMINATED, BLOCKED -> {
@@ -35,7 +35,7 @@ public class ProcessManager {
         }
 
         if (currentTimeRunning >= quantumDuration) {
-            currentProcess.stop();
+            currentProcess.getScheduledProcess().stop();
             return ScheduledProcess.State.TIMEOUT;
         }
         return ScheduledProcess.State.RUNNING;

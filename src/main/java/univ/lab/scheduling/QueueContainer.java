@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 
 public class QueueContainer {
     private final int containerSize;
-    private List<List<ScheduledProcess>> queues;
+    private List<RoundRobinScheduler> queues;
     public final static int CONSOLE_PRIORITY_QUEUE = 0;
     public final static int IO_PRIORITY_QUEUE = 1;
     public final static int SHORT_PRIORITY_QUEUE = 2;
@@ -25,24 +25,42 @@ public class QueueContainer {
 
     private void initQueues() {
         queues = new ArrayList<>(containerSize);
-        for (int i = 0; i < containerSize; i++) {
-            queues.add(new ArrayList<>(containerSize));
+        queues.add(new RoundRobinScheduler(CONSOLE_PRIORITY_QUEUE, 1));
+        queues.add(new RoundRobinScheduler(IO_PRIORITY_QUEUE, 2));
+        queues.add(new RoundRobinScheduler(SHORT_PRIORITY_QUEUE, 4));
+        queues.add(new RoundRobinScheduler(LONG_PRIORITY_QUEUE, 8));
+    }
+    public void register(ScheduledProcess process) {
+        this.queues.get(CONSOLE_PRIORITY_QUEUE).registerProcess(process);
+    }
+    public void enqueue(RunningProcess process) {
+        int maxBreaks = 2;
+        if (process.usedProvidedQuantum()) {
+            if (process.getBreaks() >= maxBreaks) {
+                changeProcessPriority(process);
+            } else {
+                process.addBreak();
+            }
         }
+        queues.get(process.getCurrentPriority()).enqueue(process);
     }
-    public void enqueue(ScheduledProcess process) {
-        this.queues.get(CONSOLE_PRIORITY_QUEUE).add(process);
+
+    private void changeProcessPriority(RunningProcess runningProcess) {
+        int priority = runningProcess.getCurrentPriority();
+        if (priority != LONG_PRIORITY_QUEUE) {
+            runningProcess.setCurrentPriority(priority+1);
+        }
+        runningProcess.resetBreaks();
     }
-    public void enqueue(ScheduledProcess process, int priority) {
-        this.queues.get(priority).add(process);
-    }
+
     public void addFirst(ScheduledProcess process) {
-        this.queues.get(CONSOLE_PRIORITY_QUEUE).add(0, process);
+       // add first to this.queues.get(CONSOLE_PRIORITY_QUEUE)
     }
-    public Optional<ScheduledProcess> dequeue() {
-        for (List<ScheduledProcess> queue : queues) {
-            ScheduledProcess p;
-            if ((p = getReadyProcess(queue)) != null)
-                return Optional.of(p);
+    public Optional<RunningProcess> dequeue() {
+        for (RoundRobinScheduler queue : queues) {
+            Optional<RunningProcess> p;
+            if ((p = queue.getNextProcess()).isPresent())
+                return p;
         }
         return Optional.empty();
     }
@@ -56,21 +74,22 @@ public class QueueContainer {
         return null;
     }
 
-    public void remove(ScheduledProcess process) {
-        for (List<ScheduledProcess> queue : queues) {
-           queue.remove(process);
+    public void remove(RunningProcess process) {
+        for (RoundRobinScheduler roundRobinScheduler : queues) {
+           roundRobinScheduler.remove(process);
         }
     }
 
     public void applyElapsedTime(int timeElapsed) {
-        forEachProcess(p-> p.applyTime(timeElapsed));
+        forEachProcess(p-> p.getScheduledProcess().applyTime(timeElapsed));
     }
 
-    private void forEachProcess(Consumer<ScheduledProcess> action) {
-        for (List<ScheduledProcess> queue : queues) {
-            for (ScheduledProcess process : queue) {
+    private void forEachProcess(Consumer<RunningProcess> action) {
+        for (RoundRobinScheduler roundRobinScheduler : queues) {
+            for (RunningProcess process : roundRobinScheduler.eachProcess()) {
                 action.accept(process);
             }
         }
     }
+
 }
