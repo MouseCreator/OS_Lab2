@@ -40,7 +40,7 @@ public class ScheduledProcess {
 
     public void stop() {
         if (state != State.RUNNING) {
-            throw new IllegalStateException("Process is not stopped while not running");
+            throw new IllegalStateException("Process is stopped while not running");
         }
         nextWorkTime -= currentPhaseTime;
         state = State.READY;
