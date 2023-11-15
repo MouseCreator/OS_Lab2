@@ -1,49 +1,45 @@
 package univ.lab.scheduling;
 
-import univ.lab.ontko.Results;
-
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.*;
 
-public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<ScheduledProcess>{
+public class MultipleQueuesSchedulingAlgorithm {
     private final QueueContainer queueContainer;
+    private int quantumDuration = 20;
+    private int boostFrequency = 500;
+
     public MultipleQueuesSchedulingAlgorithm(QueueContainer queueContainer) {
         this.queueContainer = queueContainer;
     }
-    @Override
-    public Results run(int runtime, Vector<ScheduledProcess> processVector, Results result) {
+
+    public CustomResults run(Vector<ScheduledProcess> processVector) {
         List<ScheduledProcess> processList = toSortedList(processVector);
-        return simulate(runtime, processList, result);
+        return simulate(processList);
     }
 
     private List<ScheduledProcess> toSortedList(Vector<ScheduledProcess> processVector) {
         return new ArrayList<>(processVector.stream().sorted(Comparator.comparingInt(ScheduledProcess::getTimeArrive)).toList());
     }
 
-    private Results simulate(int runtime, List<ScheduledProcess> scheduledProcesses, Results result) {
-        result.schedulingType = "Batch (Nonpreemptive)";
-        result.schedulingName = "4 Queues";
-        int computationTime = 0;
+    private CustomResults simulate(List<ScheduledProcess> scheduledProcesses) {
         try {
-            computationTime = calculate(runtime, scheduledProcesses);
+             return calculate(scheduledProcesses);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        result.compuTime = computationTime;
-        return result;
     }
 
-    private int calculate(int runtime, List<ScheduledProcess> scheduledProcesses) throws FileNotFoundException {
-        int quantumDuration = 20;
-        int boostFrequency = 500;
+    private CustomResults calculate(List<ScheduledProcess> scheduledProcesses) throws FileNotFoundException {
         String resultsFile = "src/main/resources/Summary-Processes.txt";
         PrintStream outStream = new PrintStream(new FileOutputStream(resultsFile));
+        CustomResults results = new CustomResults();
         int computationTime;
         int lastBoost = 0;
         RunningProcess process = null;
+        results.setProcessList(new ArrayList<>(scheduledProcesses));
         ProcessManager processManager = new ProcessManager();
         processManager.setQuantumDuration(quantumDuration);
         for (computationTime = 0; computationTime < runtime; computationTime++) {
@@ -53,7 +49,7 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
                     process = startNextProcess(processManager, outStream);
                 } else {
                     if (scheduledProcesses.isEmpty())
-                        return computationTime;
+                        break;
                     outStream.println("Idle...");
                     queueContainer.applyElapsedTime(1);
                     process = startNextProcess(processManager, outStream);
@@ -82,7 +78,8 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
             }
         }
         outStream.close();
-        return computationTime;
+        results.setCalculationTime(computationTime);
+        return results;
     }
 
     private RunningProcess startNextProcess(ProcessManager manager, PrintStream outStream) {
@@ -127,6 +124,20 @@ public class MultipleQueuesSchedulingAlgorithm implements SchedulingAlgorithm<Sc
     private void registerProcess(ScheduledProcess process, PrintStream out) {
         queueContainer.register(process);
         out.println("Registered process: " + process.getName());
+    }
+
+    private int runtime;
+
+    public void setRuntime(int runtime) {
+        this.runtime = runtime;
+    }
+
+    public void setQuantumDuration(int quantumDuration) {
+        this.quantumDuration = quantumDuration;
+    }
+
+    public void setBoostFrequency(int boostFrequency) {
+        this.boostFrequency = boostFrequency;
     }
 
 

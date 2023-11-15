@@ -13,15 +13,17 @@ public class QueueContainer {
     public final static int IO_PRIORITY_QUEUE = 1;
     public final static int SHORT_PRIORITY_QUEUE = 2;
     public final static int LONG_PRIORITY_QUEUE = 3;
-    public QueueContainer(int containerSize) {
+    private final int maxBreaks;
+    public QueueContainer(int containerSize, int maxBreaks) {
+        this.maxBreaks = maxBreaks;
         this.containerSize = containerSize;
         initQueues();
     }
     public int maxPriority() {
         return LONG_PRIORITY_QUEUE;
     }
-    public static QueueContainer commonContainer() {
-        return new QueueContainer(4);
+    public static QueueContainer commonContainer(int maxBreaks) {
+        return new QueueContainer(4, maxBreaks);
     }
 
     private void initQueues() {
@@ -35,7 +37,6 @@ public class QueueContainer {
         this.queues.get(CONSOLE_PRIORITY_QUEUE).registerProcess(process);
     }
     public void enqueue(RunningProcess process) {
-        int maxBreaks = 2;
         if (process.isBlocked()) {
             queues.get(process.getCurrentPriority()).enqueue(process);
             return;
@@ -89,6 +90,7 @@ public class QueueContainer {
         }
         for (RunningProcess process : processesToBoost) {
             process.setCurrentPriority(CONSOLE_PRIORITY_QUEUE);
+            process.getScheduledProcess().getStats().addBoosted();
             outStream.println(process.getScheduledProcess().getName() + " was boosted!");
             queues.get(CONSOLE_PRIORITY_QUEUE).enqueueFirst(process);
         }

@@ -2,7 +2,8 @@
 <properties>
     <configuration>
         <runtime>6000</runtime>
-        <quantum>10</quantum>
+        <quantum>20</quantum>
+        <boost_freq>500</boost_freq>
         <breaks>2</breaks>
     </configuration>
 

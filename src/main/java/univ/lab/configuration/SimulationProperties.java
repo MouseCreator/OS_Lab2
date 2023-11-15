@@ -11,6 +11,8 @@ public class SimulationProperties {
     private int quantumDuration;
     @Fill(attribute = "breaks")
     private int breaks;
+    @Fill(attribute = "boost_freq")
+    private int boostFrequency;
 
     public int getRuntime() {
         return runtime;
@@ -24,15 +26,10 @@ public class SimulationProperties {
         return quantumDuration;
     }
 
-    public void setQuantumDuration(int quantumDuration) {
-        this.quantumDuration = quantumDuration;
-    }
-
     public int getBreaks() {
         return breaks;
     }
-
-    public void setBreaks(int breaks) {
-        this.breaks = breaks;
+    public int getBoostFrequency() {
+        return boostFrequency;
     }
 }

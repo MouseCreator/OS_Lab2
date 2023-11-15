@@ -11,6 +11,7 @@ public class ScheduledProcess {
     private TimeGenerator workTimeGenerator;
     private boolean toBoost;
     private int timeArrive;
+    private final SPStats stats = new SPStats();
     private String name;
     public State getState() {
         return state;
@@ -30,6 +31,7 @@ public class ScheduledProcess {
     private void block() {
         state = State.BLOCKED;
         nextBlockTime = getNextBlockTime();
+        stats.addBlocked();
         resetPhase();
     }
 
@@ -51,6 +53,7 @@ public class ScheduledProcess {
         }
         fullElapsedTime++;
         currentPhaseTime++;
+        stats.addTotalTimeRunning(1);
         if (fullElapsedTime >= timeToComplete) {
             state = State.TERMINATED;
         }
@@ -67,6 +70,7 @@ public class ScheduledProcess {
             throw new IllegalStateException("Called apply time, when process is not blocked");
         }
         currentPhaseTime += timeElapsed;
+        stats.addTotalTimeBlocked(timeElapsed);
         if (currentPhaseTime > nextBlockTime) {
             state = State.READY;
             resetPhase();
@@ -84,10 +88,6 @@ public class ScheduledProcess {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setState(State newState) {
-        state = newState;
     }
 
     enum State {
@@ -122,5 +122,9 @@ public class ScheduledProcess {
     }
     private int getNextWorkTime() {
         return workTimeGenerator.generateTime();
+    }
+
+    public SPStats getStats() {
+        return stats;
     }
 }
