@@ -11,7 +11,7 @@ public class SimpleRoundRobinScheduler implements SimpleScheduler {
     private final int quantumNumber;
     private final int priority;
 
-    public SimpleRoundRobinScheduler(int quantumNumber, int priority) {
+    public SimpleRoundRobinScheduler(int priority, int quantumNumber) {
         this.quantumNumber = quantumNumber;
         this.priority = priority;
         this.activeProcessList = new ArrayList<>();

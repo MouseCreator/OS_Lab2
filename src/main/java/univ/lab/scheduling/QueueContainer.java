@@ -7,36 +7,55 @@ import java.util.Optional;
 import java.util.function.Consumer;
 
 public class QueueContainer {
-    private final int containerSize;
-    private List<MultiLevelRoundRobinScheduler> queues;
+    private List<SimpleScheduler> queues;
+    public final static int BOOSTED_QUEUE = -1;
     public final static int CONSOLE_PRIORITY_QUEUE = 0;
     public final static int IO_PRIORITY_QUEUE = 1;
     public final static int SHORT_PRIORITY_QUEUE = 2;
     public final static int LONG_PRIORITY_QUEUE = 3;
     private final int maxBreaks;
-    public QueueContainer(int containerSize, int maxBreaks) {
+    private SimpleScheduler boostedList;
+    public QueueContainer(int maxBreaks) {
         this.maxBreaks = maxBreaks;
-        this.containerSize = containerSize;
         initQueues();
     }
     public int maxPriority() {
         return LONG_PRIORITY_QUEUE;
     }
     public static QueueContainer commonContainer(int maxBreaks) {
-        return new QueueContainer(4, maxBreaks);
+        return new QueueContainer(maxBreaks);
     }
 
     private void initQueues() {
-        queues = new ArrayList<>(containerSize);
-        queues.add(new MultiLevelRoundRobinScheduler(CONSOLE_PRIORITY_QUEUE, 1));
-        queues.add(new MultiLevelRoundRobinScheduler(IO_PRIORITY_QUEUE, 2));
-        queues.add(new MultiLevelRoundRobinScheduler(SHORT_PRIORITY_QUEUE, 4));
-        queues.add(new MultiLevelRoundRobinScheduler(LONG_PRIORITY_QUEUE, 8));
+        queues = new ArrayList<>(4);
+        queues.add(new SimpleRoundRobinScheduler(CONSOLE_PRIORITY_QUEUE, 1));
+        queues.add(new SimpleRoundRobinScheduler(IO_PRIORITY_QUEUE, 2));
+        queues.add(new SimpleRoundRobinScheduler(SHORT_PRIORITY_QUEUE, 4));
+        queues.add(new SimpleRoundRobinScheduler(LONG_PRIORITY_QUEUE, 8));
+
+        boostedList = new SimpleRoundRobinScheduler(BOOSTED_QUEUE, 1);
     }
     public void register(ScheduledProcess process) {
         this.queues.get(CONSOLE_PRIORITY_QUEUE).registerProcess(process);
     }
     public void enqueue(RunningProcess process) {
+        if (process.getCurrentPriority() == BOOSTED_QUEUE) {
+            if (process.isBlocked()) {
+                changeProcessPriority(process);
+                queues.get(process.getCurrentPriority()).registerProcess(process.getScheduledProcess());
+                return;
+            }
+            if (process.usedProvidedQuantum()) {
+                process.addBreak();
+                if (process.getBreaks() >= maxBreaks) {
+                    changeProcessPriority(process);
+                    queues.get(process.getCurrentPriority()).registerProcess(process.getScheduledProcess());
+                    return;
+                }
+            }
+            boostedList.enqueue(process);
+            return;
+        }
         if (process.isBlocked()) {
             queues.get(process.getCurrentPriority()).enqueue(process);
             return;
@@ -60,7 +79,10 @@ public class QueueContainer {
         runningProcess.resetBreaks();
     }
     public Optional<RunningProcess> dequeue() {
-        for (MultiLevelRoundRobinScheduler queue : queues) {
+        Optional<RunningProcess> boosted = boostedList.getNextProcess();
+        if (boosted.isPresent())
+            return boosted;
+        for (SimpleScheduler queue : queues) {
             Optional<RunningProcess> p;
             if ((p = queue.getNextProcess()).isPresent())
                 return p;
@@ -76,7 +98,10 @@ public class QueueContainer {
     }
 
     private void forEachProcess(Consumer<RunningProcess> action) {
-        for (MultiLevelRoundRobinScheduler roundRobinScheduler : queues) {
+        for (RunningProcess process : boostedList.eachProcess()){
+            action.accept(process);
+        }
+        for (SimpleScheduler roundRobinScheduler : queues) {
             for (RunningProcess process : roundRobinScheduler.eachProcess()) {
                 action.accept(process);
             }
@@ -85,14 +110,14 @@ public class QueueContainer {
 
     public void boost(PrintStream outStream) {
         List<RunningProcess> processesToBoost = new ArrayList<>();
-        for (MultiLevelRoundRobinScheduler roundRobinScheduler : queues) {
+        for (SimpleScheduler roundRobinScheduler : queues) {
             processesToBoost.addAll(roundRobinScheduler.removeBoostable());
         }
         for (RunningProcess process : processesToBoost) {
-            process.setCurrentPriority(CONSOLE_PRIORITY_QUEUE);
+            process.setCurrentPriority(BOOSTED_QUEUE);
             process.getScheduledProcess().getStats().addBoosted();
             outStream.println(process.getScheduledProcess().getName() + " was boosted!");
-            queues.get(CONSOLE_PRIORITY_QUEUE).enqueueFirst(process);
+            boostedList.enqueueFirst(process);
         }
     }
 }
