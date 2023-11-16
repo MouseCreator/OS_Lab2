@@ -6,9 +6,6 @@ import univ.lab.lib.filemanager.FileManager;
 import univ.lab.scheduling.*;
 
 public class Main {
-    /*
-    TODO: Add special queue for boosted processes?
-     */
     public static void main(String[] args) {
         String file = getFile(args);
 
