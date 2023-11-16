@@ -5,12 +5,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
-public class RoundRobinScheduler {
+public class MultiLevelRoundRobinScheduler implements SimpleScheduler {
     private final List<RunningProcess> activeProcessList;
     private final List<RunningProcess> timeoutProcesses;
     private final int quantumNumber;
     private final int priority;
-    public RoundRobinScheduler(int priority, int quantumNumber) {
+    public MultiLevelRoundRobinScheduler(int priority, int quantumNumber) {
         this.activeProcessList = new ArrayList<>();
         this.quantumNumber = quantumNumber;
         this.priority = priority;

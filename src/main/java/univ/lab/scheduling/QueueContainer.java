@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 
 public class QueueContainer {
     private final int containerSize;
-    private List<RoundRobinScheduler> queues;
+    private List<MultiLevelRoundRobinScheduler> queues;
     public final static int CONSOLE_PRIORITY_QUEUE = 0;
     public final static int IO_PRIORITY_QUEUE = 1;
     public final static int SHORT_PRIORITY_QUEUE = 2;
@@ -28,10 +28,10 @@ public class QueueContainer {
 
     private void initQueues() {
         queues = new ArrayList<>(containerSize);
-        queues.add(new RoundRobinScheduler(CONSOLE_PRIORITY_QUEUE, 1));
-        queues.add(new RoundRobinScheduler(IO_PRIORITY_QUEUE, 2));
-        queues.add(new RoundRobinScheduler(SHORT_PRIORITY_QUEUE, 4));
-        queues.add(new RoundRobinScheduler(LONG_PRIORITY_QUEUE, 8));
+        queues.add(new MultiLevelRoundRobinScheduler(CONSOLE_PRIORITY_QUEUE, 1));
+        queues.add(new MultiLevelRoundRobinScheduler(IO_PRIORITY_QUEUE, 2));
+        queues.add(new MultiLevelRoundRobinScheduler(SHORT_PRIORITY_QUEUE, 4));
+        queues.add(new MultiLevelRoundRobinScheduler(LONG_PRIORITY_QUEUE, 8));
     }
     public void register(ScheduledProcess process) {
         this.queues.get(CONSOLE_PRIORITY_QUEUE).registerProcess(process);
@@ -60,7 +60,7 @@ public class QueueContainer {
         runningProcess.resetBreaks();
     }
     public Optional<RunningProcess> dequeue() {
-        for (RoundRobinScheduler queue : queues) {
+        for (MultiLevelRoundRobinScheduler queue : queues) {
             Optional<RunningProcess> p;
             if ((p = queue.getNextProcess()).isPresent())
                 return p;
@@ -76,7 +76,7 @@ public class QueueContainer {
     }
 
     private void forEachProcess(Consumer<RunningProcess> action) {
-        for (RoundRobinScheduler roundRobinScheduler : queues) {
+        for (MultiLevelRoundRobinScheduler roundRobinScheduler : queues) {
             for (RunningProcess process : roundRobinScheduler.eachProcess()) {
                 action.accept(process);
             }
@@ -85,7 +85,7 @@ public class QueueContainer {
 
     public void boost(PrintStream outStream) {
         List<RunningProcess> processesToBoost = new ArrayList<>();
-        for (RoundRobinScheduler roundRobinScheduler : queues) {
+        for (MultiLevelRoundRobinScheduler roundRobinScheduler : queues) {
             processesToBoost.addAll(roundRobinScheduler.removeBoostable());
         }
         for (RunningProcess process : processesToBoost) {

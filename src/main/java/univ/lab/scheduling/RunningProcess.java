@@ -5,7 +5,7 @@ public class RunningProcess {
     private int currentQuantum;
     private int timesBreak;
     private int currentPriority;
-    public static RunningProcess fromScheduledProcess(RoundRobinScheduler roundRobinScheduler, ScheduledProcess process) {
+    public static RunningProcess fromScheduledProcess(SimpleScheduler roundRobinScheduler, ScheduledProcess process) {
         RunningProcess runningProcess = new RunningProcess();
         runningProcess.scheduledProcess = process;
         runningProcess.timesBreak = 0;
