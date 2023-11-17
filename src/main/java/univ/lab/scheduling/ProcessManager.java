@@ -33,6 +33,7 @@ public class ProcessManager {
             }
             case BLOCKED -> {
                 outStream.println("Process " + name() + " was blocked!");
+                currentProcess.setWasBlocked(true);
                 return state;
             }
             case RUNNING -> {

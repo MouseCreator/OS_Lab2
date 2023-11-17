@@ -5,9 +5,9 @@ Quantum duration: 20
 Breaks limit: 2
 Expected Runtime: 6000
 Actual Runtime: 6000
-Time idle: 249
+Time idle: 222
 Name 				Time_Run	Time_Blocked	IO_Blocked	Boosted_times	
-Filesystem   		750 		5154			25			11   			
-Short calculation	1890		2429			63			0				
-Long calculation 	3071		479 			38			0				
-Console  			40  		5869			8 			0				
+Filesystem   		750 		4972			25			11   			
+Short calculation	2000		2673			66			0				
+Long calculation 	2988		557 			37			0				
+Console  			40  		5872			8 			0				

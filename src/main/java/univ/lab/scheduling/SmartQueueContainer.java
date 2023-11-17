@@ -109,7 +109,8 @@ public class SmartQueueContainer implements QueueContainer {
     public void boost(PrintStream outStream) {
         for (RunningProcess process : blockedProcesses) {
             if (process.getScheduledProcess().isToBoost()) {
-                boostProcess(outStream, process);
+                boostProcess(process);
+                outStream.println(process.getScheduledProcess().getName() + " was boosted! (waiting...)");
                 process.setBoosted(true);
             }
         }
@@ -118,15 +119,15 @@ public class SmartQueueContainer implements QueueContainer {
             processesToBoost.addAll(roundRobinScheduler.removeBoostable());
         }
         for (RunningProcess process : processesToBoost) {
-            boostProcess(outStream, process);
+            boostProcess(process);
+            outStream.println(process.getScheduledProcess().getName() + " was boosted!");
             queues.get(IO_PRIORITY_QUEUE).enqueueFirst(process);
         }
     }
 
-    private void boostProcess(PrintStream outStream, RunningProcess process) {
+    private void boostProcess(RunningProcess process) {
         process.setCurrentPriority(IO_PRIORITY_QUEUE);
         process.getScheduledProcess().getStats().addBoosted();
-        outStream.println(process.getScheduledProcess().getName() + " was boosted!");
         process.resetBreaks();
     }
 }

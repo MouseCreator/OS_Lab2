@@ -5,8 +5,8 @@ public class RunningProcess {
     private int currentQuantum;
     private int timesBreak;
     private int currentPriority;
-
     private boolean boosted;
+    private boolean wasBlocked;
     public static RunningProcess fromScheduledProcess(SimpleScheduler roundRobinScheduler, ScheduledProcess process) {
         RunningProcess runningProcess = new RunningProcess();
         runningProcess.scheduledProcess = process;
@@ -68,5 +68,13 @@ public class RunningProcess {
     }
     public boolean getBoosted() {
         return boosted;
+    }
+
+    public boolean wasBlocked() {
+        return wasBlocked;
+    }
+
+    public void setWasBlocked(boolean wasBlocked) {
+        this.wasBlocked = wasBlocked;
     }
 }

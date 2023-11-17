@@ -38,9 +38,7 @@ public class SimpleRoundRobinScheduler implements SimpleScheduler {
 
     @Override
     public void enqueue(RunningProcess process) {
-        if (process.isBlocked() || process.usedProvidedQuantum()) {
-            process.provideQuantum(quantumNumber);
-        }
+        provideQuantumIfNeeded(process);
         activeProcessList.add(process);
     }
 
@@ -76,10 +74,15 @@ public class SimpleRoundRobinScheduler implements SimpleScheduler {
     @Override
     public void enqueueFirst(RunningProcess process) {
         process.resetBreaks();
-        if (process.isBlocked() || process.usedProvidedQuantum()) {
-            process.provideQuantum(quantumNumber);
-        }
+        provideQuantumIfNeeded(process);
         process.setCurrentPriority(priority);
         activeProcessList.add(0, process);
+    }
+
+    private void provideQuantumIfNeeded(RunningProcess process) {
+        if (process.wasBlocked() || process.usedProvidedQuantum()) {
+            process.provideQuantum(quantumNumber);
+            process.setWasBlocked(false);
+        }
     }
 }

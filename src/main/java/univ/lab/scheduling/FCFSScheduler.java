@@ -37,10 +37,14 @@ public class FCFSScheduler implements SimpleScheduler{
 
     @Override
     public void enqueue(RunningProcess process) {
-        if (process.isBlocked() || process.usedProvidedQuantum()) {
-            process.provideQuantum(quantumNumber);
-        }
+        provideQuantumIfNeeded(process);
         activeProcessList.add(0, process);
+    }
+    private void provideQuantumIfNeeded(RunningProcess process) {
+        if (process.wasBlocked() || process.usedProvidedQuantum()) {
+            process.provideQuantum(quantumNumber);
+            process.setWasBlocked(false);
+        }
     }
 
     @Override
@@ -74,6 +78,7 @@ public class FCFSScheduler implements SimpleScheduler{
 
     @Override
     public void enqueueFirst(RunningProcess process) {
+        provideQuantumIfNeeded(process);
         activeProcessList.add(0, process);
     }
 }
