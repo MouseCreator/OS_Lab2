@@ -7,7 +7,7 @@ import univ.lab.configuration.SimulationProperties;
 public class SchedulingAlgorithmFactory {
     public static MultipleQueuesSchedulingAlgorithm buildForQueues(Configuration configuration) {
         SimulationProperties properties = configuration.getProperties();
-        QueueContainerImpl queueContainer = QueueContainerImpl.commonContainer(properties.getBreaks());
+        QueueContainer queueContainer = SmartQueueContainer.commonContainer(properties.getBreaks());
         MultipleQueuesSchedulingAlgorithm algorithm = new MultipleQueuesSchedulingAlgorithm(queueContainer);
         algorithm.setRuntime(properties.getRuntime());
         algorithm.setBoostFrequency(properties.getBoostFrequency());
