@@ -5,6 +5,8 @@ public class RunningProcess {
     private int currentQuantum;
     private int timesBreak;
     private int currentPriority;
+
+    private boolean boosted;
     public static RunningProcess fromScheduledProcess(SimpleScheduler roundRobinScheduler, ScheduledProcess process) {
         RunningProcess runningProcess = new RunningProcess();
         runningProcess.scheduledProcess = process;
@@ -59,5 +61,12 @@ public class RunningProcess {
 
     public int getQuantumRemain() {
         return currentQuantum;
+    }
+
+    public void setBoosted(boolean boosted) {
+        this.boosted = boosted;
+    }
+    public boolean getBoosted() {
+        return boosted;
     }
 }

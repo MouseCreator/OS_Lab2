@@ -86,7 +86,12 @@ public class SmartQueueContainer implements QueueContainer {
         }
         blockedProcesses.removeAll(unblocked);
         for (RunningProcess process : unblocked) {
-            queues.get(process.getCurrentPriority()).enqueue(process);
+            if (process.getBoosted()) {
+                queues.get(IO_PRIORITY_QUEUE).enqueueFirst(process);
+                process.setBoosted(false);
+            } else {
+                queues.get(process.getCurrentPriority()).enqueue(process);
+            }
         }
     }
 
@@ -104,9 +109,8 @@ public class SmartQueueContainer implements QueueContainer {
     public void boost(PrintStream outStream) {
         for (RunningProcess process : blockedProcesses) {
             if (process.getScheduledProcess().isToBoost()) {
-                process.setCurrentPriority(IO_PRIORITY_QUEUE);
-                outStream.println(process.getScheduledProcess().getName() + " was boosted!");
-                process.resetBreaks();
+                boostProcess(outStream, process);
+                process.setBoosted(true);
             }
         }
         List<RunningProcess> processesToBoost = new ArrayList<>();
@@ -114,10 +118,15 @@ public class SmartQueueContainer implements QueueContainer {
             processesToBoost.addAll(roundRobinScheduler.removeBoostable());
         }
         for (RunningProcess process : processesToBoost) {
-            process.setCurrentPriority(IO_PRIORITY_QUEUE);
-            process.getScheduledProcess().getStats().addBoosted();
-            outStream.println(process.getScheduledProcess().getName() + " was boosted!");
+            boostProcess(outStream, process);
             queues.get(IO_PRIORITY_QUEUE).enqueueFirst(process);
         }
+    }
+
+    private void boostProcess(PrintStream outStream, RunningProcess process) {
+        process.setCurrentPriority(IO_PRIORITY_QUEUE);
+        process.getScheduledProcess().getStats().addBoosted();
+        outStream.println(process.getScheduledProcess().getName() + " was boosted!");
+        process.resetBreaks();
     }
 }
